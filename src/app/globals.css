@@ -67,6 +67,12 @@ select {
 .marketing-nav-button,
 .marketing-button {
   text-decoration: none;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .marketing-nav-button,
@@ -92,6 +98,30 @@ select {
   box-shadow: 0 16px 34px rgba(230, 90, 50, 0.24);
 }
 
+.marketing-nav a:hover {
+  color: #071d33;
+}
+
+.marketing-button:hover,
+.marketing-nav-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 38px rgba(7, 29, 51, 0.12);
+}
+
+.marketing-button--primary:hover,
+.marketing-nav-button:hover {
+  background: #d94d27;
+  box-shadow: 0 18px 38px rgba(230, 90, 50, 0.3);
+}
+
+.marketing-button:focus-visible,
+.marketing-nav-button:focus-visible,
+.marketing-nav a:focus-visible,
+.faq-list summary:focus-visible {
+  outline: 3px solid rgba(230, 90, 50, 0.36);
+  outline-offset: 4px;
+}
+
 .marketing-hero {
   display: grid;
   width: min(100%, 1180px);
@@ -107,7 +137,7 @@ select {
 .pack-card h2,
 .steps-section h2,
 .demo-section h2,
-.final-cta h2 {
+.marketing-final-cta h2 {
   margin: 0;
   color: #071d33;
   letter-spacing: 0;
@@ -129,7 +159,7 @@ select {
 .marketing-hero__copy p:not(.marketing-eyebrow),
 .marketing-section__intro p:not(.marketing-eyebrow),
 .pack-card p,
-.final-cta p {
+.marketing-final-cta p {
   color: #475569;
   font-size: 18px;
   line-height: 1.58;
@@ -342,10 +372,11 @@ select {
 .faq-section,
 .demo-section,
 .pack-section,
-.final-cta {
+.marketing-final-cta {
   width: min(100%, 1180px);
   margin: 0 auto;
-  padding: 54px 24px;
+  padding: 46px 24px;
+  scroll-margin-top: 86px;
 }
 
 .marketing-section__intro {
@@ -359,7 +390,7 @@ select {
 .demo-section h2,
 .comparison-section h2,
 .faq-section h2,
-.final-cta h2 {
+.marketing-final-cta h2 {
   font-size: clamp(32px, 4vw, 50px);
   line-height: 1;
 }
@@ -595,18 +626,23 @@ select {
   margin-bottom: 0;
 }
 
-.final-cta {
+.marketing-final-cta {
   text-align: center;
 }
 
-.final-cta p {
+.marketing-final-cta p {
   max-width: 620px;
   margin: 18px auto 28px;
 }
 
+.marketing-final-cta .marketing-button {
+  width: min(100%, 380px);
+}
+
 .scroll-phone-section {
   background: #f1f5f9;
-  padding: 54px 24px;
+  padding: 46px 24px;
+  scroll-margin-top: 86px;
 }
 
 .scroll-phone-sticky {
@@ -999,7 +1035,7 @@ select {
   .faq-section,
   .demo-section,
   .pack-section,
-  .final-cta {
+  .marketing-final-cta {
     padding: 38px 18px;
   }
 

@@ -18,22 +18,22 @@ const WHATSAPP_URL =
 const featureCards = [
   {
     title: "WhatsApp directo",
-    text: "Tus clientes te escriben sin buscar tu número.",
+    text: "Tus clientes te escriben con un toque, sin guardar ni buscar tu número.",
     icon: <HiOutlineChatBubbleLeftRight />,
   },
   {
-    title: "Datos de transferencia",
-    text: "Muestra tus datos de pago de forma clara y ordenada.",
+    title: "Datos para transferir",
+    text: "Evita errores: tus clientes copian tus datos bancarios desde el celular.",
     icon: <HiOutlineBanknotes />,
   },
   {
-    title: "Catálogo o menú",
-    text: "Comparte productos, servicios, precios o promociones.",
+    title: "Catálogo, menú o servicios",
+    text: "Muestra lo que vendes sin enviar fotos una por una.",
     icon: <HiOutlineShoppingBag />,
   },
   {
-    title: "Redes y ubicación",
-    text: "Lleva a tus clientes a Instagram, Google Maps u otros enlaces.",
+    title: "Redes, horario y ubicación",
+    text: "Haz que te sigan, te encuentren y sepan cuándo atiendes.",
     icon: <HiOutlineMapPin />,
   },
 ];
@@ -42,27 +42,27 @@ const packItems = [
   "Mini landing móvil personalizada.",
   "QR único para tu negocio.",
   "Botones a WhatsApp, Instagram, catálogo, ubicación o pago.",
-  "Datos de transferencia ordenados.",
-  "Uso de logo, foto o imagen del negocio.",
+  "Datos de transferencia ordenados y fáciles de copiar.",
+  "Uso de logo, foto, colores y datos de tu negocio.",
   "Archivo del QR listo para imprimir.",
-  "Diseño base para afiche o sticker.",
+  "Diseño base para afiche, tarjeta o sticker.",
   "Ajustes iniciales para dejarlo funcionando.",
 ];
 
 const useCases = [
   {
     title: "Foodtrucks",
-    text: "Menú, ubicación y pedidos desde la fila.",
+    text: "Menú, pedidos y redes mientras tus clientes esperan.",
     image: "/puntoqr/foodtruck.png",
   },
   {
     title: "Ferias y bazares",
-    text: "Todo tu contacto visible desde el puesto.",
+    text: "Contacto, pago, catálogo e Instagram desde tu puesto.",
     image: "/puntoqr/feria-dulces.png",
   },
   {
     title: "Velas, artesanía y regalos",
-    text: "Packaging conectado con redes, catálogo y pago.",
+    text: "Un QR en tu packaging para que vuelvan a comprarte.",
     image: "/puntoqr/pack-qr.png",
   },
 ];
@@ -70,26 +70,38 @@ const useCases = [
 const faqItems = [
   {
     question: "¿Necesito tener página web?",
-    answer: "No. PuntoQR crea una mini landing para tu negocio.",
+    answer:
+      "No. PuntoQR funciona como una mini página móvil independiente. Tus clientes entran escaneando tu QR o abriendo tu enlace.",
   },
   {
     question: "¿Puedo usar mis propias fotos?",
-    answer: "Sí. Puedes enviar fotos, logo, colores o imágenes de tus productos.",
+    answer:
+      "Sí. Puedes enviarnos fotos de tus productos, local, puesto, menú o trabajos anteriores.",
   },
   {
     question: "¿El QR cambia si actualizo mis datos?",
     answer:
-      "El objetivo es que el QR apunte a tu mini landing. Si se actualiza la información dentro de la landing, puedes mantener el mismo QR.",
+      "No necesariamente. La idea es que el QR siga siendo el mismo y podamos actualizar la información de la mini landing cuando corresponda.",
   },
   {
     question: "¿Sirve para ferias o negocios sin local?",
     answer:
-      "Sí. Es ideal para ferias, foodtrucks, bazares, servicios, emprendimientos y ventas presenciales.",
+      "Sí. Puedes usarlo en un mesón, puesto, afiche, tarjeta, sticker, packaging o redes sociales.",
   },
   {
     question: "¿Incluye impresión?",
     answer:
-      "Esta versión incluye archivos listos para imprimir. La impresión puede cotizarse aparte.",
+      "El pack inicial incluye el archivo listo para imprimir. La impresión física puede cotizarse aparte si está disponible.",
+  },
+  {
+    question: "¿Qué necesito enviar para crear mi PuntoQR?",
+    answer:
+      "Nombre del negocio, logo si tienes, WhatsApp, redes, datos de pago, ubicación, horario, fotos y enlaces que quieras incluir.",
+  },
+  {
+    question: "¿Puedo compartirlo en Instagram o WhatsApp?",
+    answer:
+      "Sí. Además del QR, puedes compartir el enlace de tu mini landing en redes, WhatsApp o biografía de Instagram.",
   },
 ];
 
@@ -123,9 +135,8 @@ export default function HomePage() {
             Convierte tu mesón en un punto de contacto digital
           </h1>
           <p>
-            Creamos una mini landing móvil para tu negocio y un QR listo para
-            imprimir, para que tus clientes puedan pagarte, escribirte, ver tu
-            catálogo o seguirte en redes desde un solo lugar.
+            Tus clientes escanean un QR y encuentran todo en segundos:
+            WhatsApp, datos de pago, catálogo, redes, ubicación y horario.
           </p>
           <div className="marketing-actions">
             <a className="marketing-button marketing-button--primary" href={WHATSAPP_URL}>
@@ -133,11 +144,11 @@ export default function HomePage() {
               <HiOutlineArrowRight aria-hidden="true" />
             </a>
             <Link className="marketing-button" href="/demo">
-              Ver mini landing demo
+              Ver demo
             </Link>
           </div>
           <p className="marketing-microcopy">
-            Pensado para ferias, foodtrucks, tiendas, repostería, servicios y
+            Ideal para ferias, foodtrucks, tiendas, reposterías, servicios y
             negocios locales.
           </p>
         </div>
@@ -182,10 +193,10 @@ export default function HomePage() {
           <p className="marketing-eyebrow">Qué es PuntoQR</p>
           <h2>Todo lo importante de tu negocio en un solo QR</h2>
           <p>
-            PuntoQR crea una mini página móvil personalizada para que tus
-            clientes accedan rápidamente a tus datos de contacto, pago,
-            catálogo, ubicación y redes sociales. Tú recibes el QR listo para
-            usar en tu mesón, packaging, afiche o tarjeta.
+            Creamos una mini landing móvil para que tus clientes encuentren
+            todo lo que necesitan después de escanear tu QR: contacto, pagos,
+            catálogo, redes, ubicación y horario. Tú recibes el enlace y el QR
+            listo para imprimir.
           </p>
         </div>
         <div className="marketing-feature-grid">
@@ -205,13 +216,14 @@ export default function HomePage() {
             <p className="marketing-eyebrow">Oferta inicial</p>
             <h2>Pack PuntoQR Inicial</h2>
             <p>
-              Una solución simple para comenzar a digitalizar tu negocio físico
-              sin pagar una plataforma mensual.
+              Una solución simple para digitalizar tu negocio físico sin pagar
+              una plataforma mensual.
             </p>
             <p className="pack-price">Desde $39.990</p>
             <p className="pack-note">
-              Precio final según nivel de personalización y piezas gráficas
-              incluidas.
+              Incluye mini landing, QR personalizado y diseño base listo para
+              imprimir. El precio final puede variar según personalización y
+              piezas gráficas adicionales.
             </p>
             <a className="marketing-button marketing-button--primary" href={WHATSAPP_URL}>
               Quiero mi Pack PuntoQR
@@ -250,16 +262,16 @@ export default function HomePage() {
             <span>2</span>
             <h3>Creamos tu mini landing</h3>
             <p>
-              Diseñamos una página móvil simple, clara y personalizada para tu
-              negocio.
+              Diseñamos una página móvil clara, personalizada y lista para
+              compartir.
             </p>
           </article>
           <article>
             <span>3</span>
             <h3>Recibes tu QR listo para imprimir</h3>
             <p>
-              Puedes usarlo en tu mesón, afiche, tarjeta, packaging, puesto o
-              local.
+              Puedes usarlo en tu mesón, afiche, tarjeta, sticker, packaging,
+              puesto o local.
             </p>
           </article>
         </div>
@@ -296,11 +308,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="final-cta">
-        <h2>Crea el punto digital de tu negocio</h2>
+      <section className="marketing-final-cta">
+        <h2>Crea el punto de contacto digital de tu negocio</h2>
         <p>
-          Ordena tus datos, facilita el contacto con tus clientes y entrega una
-          experiencia más profesional desde el primer escaneo.
+          Ordena tus datos, facilita el contacto y entrega una experiencia más
+          profesional desde el primer escaneo.
         </p>
         <a className="marketing-button marketing-button--primary" href={WHATSAPP_URL}>
           Pedir mi PuntoQR

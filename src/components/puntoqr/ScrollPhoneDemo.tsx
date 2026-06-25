@@ -59,17 +59,17 @@ export function ScrollPhoneDemo({ client, whatsappUrl }: ScrollPhoneDemoProps) {
       <div className="scroll-phone-sticky">
         <div className="scroll-phone-copy">
           <p className="marketing-eyebrow">Mini landing móvil</p>
-          <h2>Tu negocio completo en el bolsillo de tus clientes</h2>
+          <h2>Todo lo que tus clientes necesitan después de escanear</h2>
           <p>
-            Después de escanear el QR, tus clientes pueden pedir por WhatsApp,
-            revisar tu catálogo, encontrarte en redes, ver tu ubicación o copiar
-            tus datos de transferencia sin preguntarte nada.
+            Después de escanear tu QR, tus clientes pueden escribirte por
+            WhatsApp, revisar tu catálogo, ver tu ubicación, seguirte en redes
+            o copiar tus datos de transferencia sin tener que preguntarte.
           </p>
           <ul>
             <li>Diseñada para verse bien en celular.</li>
             <li>Personalizada con tu negocio, fotos y colores.</li>
             <li>Lista para usar desde un QR físico.</li>
-            <li>Ideal para mesón, feria, foodtruck, local o packaging.</li>
+            <li>Ideal para mesón, feria, foodtruck, local, tarjeta o packaging.</li>
           </ul>
           <a className="marketing-button marketing-button--primary" href={whatsappUrl}>
             Pedir mi PuntoQR
