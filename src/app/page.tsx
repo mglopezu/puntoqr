@@ -13,7 +13,7 @@ import { ScrollPhoneDemo } from "@/components/puntoqr/ScrollPhoneDemo";
 import { getPuntoQrClientBySlug } from "@/lib/puntoqr";
 
 const WHATSAPP_URL =
-  "https://wa.me/56912345678?text=Hola,%20quiero%20crear%20mi%20PuntoQR";
+  "https://wa.me/56966991537?text=Hola,%20quiero%20crear%20mi%20PuntoQR";
 
 const featureCards = [
   {
