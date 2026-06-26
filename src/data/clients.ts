@@ -12,7 +12,7 @@ export const puntoQrClients: PuntoQrClient[] = [
     mensajeWhatsapp:
       "Hola, quiero cotizar un pedido con Dulces Martina.",
     instagram: "https://instagram.com/dulcesmartina",
-    catalogoUrl: "https://wa.me/c/56912345678",
+    catalogoUrl: "#catalogo",
     ubicacionTexto: "Retiro en Talca, Región del Maule",
     ubicacionUrl: "https://maps.google.com",
     horario: "Lunes a sábado, 10:00 a 19:00",
@@ -40,6 +40,116 @@ export const puntoQrClients: PuntoQrClient[] = [
     mapsLabel: "Ver en Google Maps",
     finalCtaText: "¿Tienes dudas o quieres consultar disponibilidad?",
     finalCtaLabel: "Escribir por WhatsApp",
+    catalogSection: {
+      title: "Nuestros dulces y tortas",
+      intro:
+        "Tortas, postres y dulces preparados con dedicación, sabor casero y una presentación cuidada para cada ocasión especial.",
+      categories: ["Tortas", "Dulces", "Postres", "Regalos"],
+      items: [
+        {
+          name: "Torta Chocolate Manjar",
+          category: "Tortas",
+          description: "Bizcocho húmedo, relleno de manjar y cubierta de chocolate.",
+          price: "Desde $18.000",
+          imageUrl: "/puntoqr/dulces.png",
+          imageAlt: "Torta de chocolate con manjar de Dulces Martina",
+          imagePosition: "center 18%",
+          buttonLabel: "Cotizar esta torta",
+          whatsappMessage:
+            "Hola Martina, quiero consultar por la Torta Chocolate Manjar que vi en tu catálogo.",
+        },
+        {
+          name: "Torta Frambuesa Crema",
+          category: "Tortas",
+          description: "Relleno suave con crema y frambuesa para celebraciones especiales.",
+          price: "Desde $22.000",
+          imageUrl: "/puntoqr/dulces.png",
+          imageAlt: "Torta de frambuesa y crema de Dulces Martina",
+          imagePosition: "left 18%",
+          buttonLabel: "Cotizar esta torta",
+          whatsappMessage:
+            "Hola Martina, quiero consultar por la Torta Frambuesa Crema que vi en tu catálogo.",
+        },
+        {
+          name: "Torta Personalizada",
+          category: "Tortas",
+          description: "Diseño a pedido con sabores, colores y detalles para tu ocasión.",
+          price: "Según diseño",
+          imageUrl: "/puntoqr/bannermartina.png",
+          imageAlt: "Torta personalizada preparada por Dulces Martina",
+          imagePosition: "center",
+          buttonLabel: "Consultar diseño",
+          whatsappMessage:
+            "Hola Martina, quiero consultar por una Torta Personalizada que vi en tu catálogo.",
+        },
+        {
+          name: "Cupcakes Decorados",
+          category: "Dulces",
+          description: "Cupcakes suaves con crema, colores y decoración para eventos.",
+          price: "Desde $1.500 c/u",
+          imageUrl: "/puntoqr/dulces.png",
+          imageAlt: "Cupcakes decorados de Dulces Martina",
+          imagePosition: "center 70%",
+          buttonLabel: "Pedir disponibilidad",
+          whatsappMessage:
+            "Hola Martina, quiero consultar por los Cupcakes Decorados que vi en tu catálogo.",
+        },
+        {
+          name: "Caja de Mini Dulces",
+          category: "Dulces",
+          description: "Selección de bocados dulces para compartir o regalar.",
+          price: "Desde $8.000",
+          imageUrl: "/puntoqr/dulces.png",
+          imageAlt: "Caja de mini dulces artesanales de Dulces Martina",
+          imagePosition: "right 58%",
+          buttonLabel: "Consultar por WhatsApp",
+          whatsappMessage:
+            "Hola Martina, quiero consultar por la Caja de Mini Dulces que vi en tu catálogo.",
+        },
+        {
+          name: "Postres en Vasito",
+          category: "Postres",
+          description: "Postres individuales listos para mesas dulces y celebraciones.",
+          price: "Desde $2.500 c/u",
+          imageUrl: "/puntoqr/dulces.png",
+          imageAlt: "Postres individuales en vasito de Dulces Martina",
+          imagePosition: "right 70%",
+          buttonLabel: "Pedir disponibilidad",
+          whatsappMessage:
+            "Hola Martina, quiero consultar por los Postres en Vasito que vi en tu catálogo.",
+        },
+        {
+          name: "Alfajores Artesanales",
+          category: "Regalos",
+          description: "Alfajores delicados para regalar, compartir o sumar a una mesa dulce.",
+          price: "Desde $6.000 la caja",
+          imageUrl: "/puntoqr/dulces.png",
+          imageAlt: "Alfajores artesanales de Dulces Martina",
+          imagePosition: "left 68%",
+          buttonLabel: "Consultar por WhatsApp",
+          whatsappMessage:
+            "Hola Martina, quiero consultar por los Alfajores Artesanales que vi en tu catálogo.",
+        },
+        {
+          name: "Box Dulce Regalo",
+          category: "Regalos",
+          description: "Caja dulce preparada con cariño para sorprender en fechas especiales.",
+          price: "Desde $12.000",
+          imageUrl: "/puntoqr/bannermartina.png",
+          imageAlt: "Box dulce de regalo preparado por Dulces Martina",
+          imagePosition: "center",
+          buttonLabel: "Cotizar regalo",
+          whatsappMessage:
+            "Hola Martina, quiero consultar por el Box Dulce Regalo que vi en tu catálogo.",
+        },
+      ],
+      specialOrdersTitle: "Pedidos especiales",
+      specialOrdersText:
+        "También preparamos tortas y dulces para cumpleaños, reuniones familiares, eventos, regalos y celebraciones especiales.",
+      specialOrdersButtonLabel: "Cotizar pedido especial",
+      specialOrdersWhatsappMessage:
+        "Hola Martina, quiero cotizar un pedido especial de tortas o dulces.",
+    },
     seoTitle: "Dulces Martina | Repostería artesanal en Talca",
     seoDescription:
       "Repostería artesanal en Talca. Encarga tortas, dulces y regalos para cumpleaños, celebraciones y ocasiones especiales. Cotiza por WhatsApp con Dulces Martina.",

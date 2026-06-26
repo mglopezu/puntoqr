@@ -14,6 +14,15 @@ export function formatWhatsappUrl(client: PuntoQrClient): string {
   return `https://wa.me/${phone}?text=${message}`;
 }
 
+export function formatWhatsappUrlWithMessage(
+  client: PuntoQrClient,
+  message: string,
+): string {
+  const phone = client.whatsapp.replace(/\D/g, "");
+
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+}
+
 export function formatTransferText(client: PuntoQrClient): string {
   const transfer = client.datosTransferencia;
 

@@ -9,6 +9,29 @@ export type TransferData = {
   correo: string;
 };
 
+export type CatalogItem = {
+  name: string;
+  category: string;
+  description: string;
+  price: string;
+  imageUrl: string;
+  imageAlt: string;
+  imagePosition?: string;
+  buttonLabel: string;
+  whatsappMessage: string;
+};
+
+export type CatalogSection = {
+  title: string;
+  intro: string;
+  categories: string[];
+  items: CatalogItem[];
+  specialOrdersTitle?: string;
+  specialOrdersText?: string;
+  specialOrdersButtonLabel?: string;
+  specialOrdersWhatsappMessage?: string;
+};
+
 export type PuntoQrClient = {
   slug: string;
   nombreNegocio: string;
@@ -43,6 +66,7 @@ export type PuntoQrClient = {
   mapsLabel?: string;
   finalCtaText?: string;
   finalCtaLabel?: string;
+  catalogSection?: CatalogSection;
   seoTitle?: string;
   seoDescription?: string;
   datosTransferencia: TransferData;

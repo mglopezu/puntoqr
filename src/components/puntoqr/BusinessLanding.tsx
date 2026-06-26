@@ -11,6 +11,7 @@ import { ActionButton } from "./ActionButton";
 import { BusinessFooter } from "./BusinessFooter";
 import { BusinessHeader } from "./BusinessHeader";
 import { BusinessProfile } from "./BusinessProfile";
+import { CatalogSection } from "./CatalogSection";
 import { LocationSection } from "./LocationSection";
 import { TransferSection } from "./TransferSection";
 
@@ -90,6 +91,7 @@ export function BusinessLanding({ client, previewMode = false }: BusinessLanding
           {client.lineaConfianza ? (
             <p className="trust-line">{client.lineaConfianza}</p>
           ) : null}
+          <CatalogSection client={client} />
           <TransferSection client={client} />
           <LocationSection client={client} />
           {client.finalCtaText && client.finalCtaLabel ? (
