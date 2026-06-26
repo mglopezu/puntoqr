@@ -722,182 +722,205 @@ select {
 }
 
 .scroll-phone-content {
+  width: 100%;
+  min-width: 100%;
   transform: translateY(var(--phone-scroll-y, 0));
   transition: transform 80ms linear;
   will-change: transform;
 }
 
-.mini-preview {
-  background: #fffaf6;
-  color: #211f1c;
+.puntoqr-page--mockup {
+  display: block;
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
 }
 
-.mini-preview__cover {
-  height: 190px;
-  background:
-    linear-gradient(135deg, rgba(217, 139, 166, 0.76), rgba(255, 240, 245, 0.62)),
-    url("/puntoqr/feria-dulces.png");
-  background-position: center;
-  background-size: cover;
-  padding: 22px;
+.business-landing--mockup {
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
 }
 
-.mini-preview__cover span {
-  display: inline-flex;
-  min-height: 34px;
-  align-items: center;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.62);
-  color: #211f1c;
+.business-landing--mockup.business-landing--simple {
+  border-radius: 0;
+}
+
+.business-landing--mockup .business-header {
+  min-height: 128px;
+  width: 100%;
+  padding: 0;
+  border-radius: 37px 37px 0 0;
+}
+
+.business-landing--mockup.business-landing--simple .business-header--has-cover {
+  min-height: 128px;
+}
+
+.business-landing--mockup .business-header__image {
+  width: 100%;
+}
+
+.business-landing--mockup .business-profile {
+  padding: 0 18px 14px;
+}
+
+.business-landing--mockup .business-profile__logo {
+  width: 56px;
+  height: 56px;
+  margin-top: -28px;
+  margin-bottom: 10px;
+  border-width: 4px;
+  font-size: 22px;
+}
+
+.business-landing--mockup .business-profile__eyebrow {
+  margin-bottom: 6px;
+  font-size: 11px;
+}
+
+.business-landing--mockup .business-profile__title {
+  font-size: 26px;
+}
+
+.business-landing--mockup .business-profile__description {
+  margin-top: 9px;
   font-size: 13px;
-  font-weight: 900;
+  line-height: 1.42;
+}
+
+.business-landing--mockup .business-content {
+  padding: 0 18px 16px;
+}
+
+.business-landing--mockup .action-list {
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.business-landing--mockup .action-button {
+  min-height: 44px;
+  border-radius: 13px;
+  font-size: 12px;
   padding: 0 12px;
 }
 
-.mini-preview__body {
-  padding: 0 20px 28px;
+.business-landing--mockup .action-button--compact {
+  min-height: 56px;
+  border-radius: 13px;
+  font-size: 10px;
+  padding: 6px 3px;
 }
 
-.mini-preview__avatar {
-  display: grid;
-  width: 82px;
-  height: 82px;
-  place-items: center;
-  border: 5px solid #fffaf6;
-  border-radius: 999px;
-  background: #d98ba6;
-  color: #fff;
-  font-size: 32px;
-  font-weight: 950;
-  margin-top: -42px;
+.business-landing--mockup .action-button__content {
+  gap: 7px;
 }
 
-.mini-preview__eyebrow {
-  color: #8a6c5d;
-  font-size: 14px;
-  font-weight: 900;
-  margin: 16px 0 8px;
+.business-landing--mockup .action-button--compact .action-button__content {
+  gap: 4px;
 }
 
-.mini-preview h3 {
-  margin: 0;
-  color: #211f1c;
-  font-size: 34px;
-  letter-spacing: 0;
-  line-height: 1;
-}
-
-.mini-preview__description {
-  color: #5c514b;
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 14px 0 20px;
-}
-
-.mini-preview__whatsapp,
-.mini-preview__transfer button {
-  display: flex;
-  width: 100%;
-  min-height: 54px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  border: 0;
-  border-radius: 16px;
-  background: #d98ba6;
-  color: #fff;
-  font-weight: 950;
-}
-
-.mini-preview__whatsapp {
-  justify-content: space-between;
-  padding: 0 16px;
-}
-
-.mini-preview__actions {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 12px 0 16px;
-}
-
-.mini-preview__actions span {
-  display: grid;
-  min-height: 84px;
-  place-items: center;
-  border: 1px solid rgba(33, 31, 28, 0.08);
-  border-radius: 16px;
-  background: #fff;
-  color: #211f1c;
-  font-size: 12px;
-  font-weight: 900;
-  text-align: center;
-}
-
-.mini-preview__actions svg {
+.business-landing--mockup .action-button__icon,
+.business-landing--mockup .action-button--compact .action-button__icon {
   width: 24px;
   height: 24px;
+  flex-basis: 24px;
+  font-size: 15px;
 }
 
-.mini-preview__transfer,
-.mini-preview__info {
-  border: 1px solid rgba(33, 31, 28, 0.08);
-  border-radius: 18px;
-  background: #fff;
-  padding: 16px;
-  margin-top: 14px;
+.business-landing--mockup .action-button__arrow {
+  margin-left: 8px;
+  font-size: 17px;
 }
 
-.mini-preview h4 {
-  margin: 0 0 12px;
-  color: #211f1c;
-  font-size: 18px;
+.business-landing--mockup .quick-action-row {
+  gap: 7px;
 }
 
-.mini-preview dl {
-  display: grid;
-  gap: 9px;
-  margin: 0;
+.business-landing--mockup .trust-line {
+  margin-bottom: 12px;
+  font-size: 10px;
 }
 
-.mini-preview dl div {
-  display: grid;
-  grid-template-columns: 92px 1fr;
+.business-landing--mockup .info-section {
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.business-landing--mockup .info-section__title {
+  margin-bottom: 7px;
+  font-size: 15px;
+}
+
+.business-landing--mockup .info-section__microcopy {
+  font-size: 10px;
+}
+
+.business-landing--mockup .transfer-row {
+  grid-template-columns: 58px minmax(0, 1fr) 26px;
+  gap: 6px;
+  min-height: 32px;
+  padding: 6px 0;
+}
+
+.business-landing--mockup .transfer-row:has(.transfer-copy-button--copied) {
+  grid-template-columns: 58px minmax(0, 1fr) 72px;
+}
+
+.business-landing--mockup .transfer-row dt {
+  font-size: 10px;
+}
+
+.business-landing--mockup .transfer-row dd {
+  font-size: 11px;
+}
+
+.business-landing--mockup .transfer-copy-button {
+  width: 24px;
+  height: 24px;
+  font-size: 13px;
+}
+
+.business-landing--mockup .transfer-copy-button--copied {
+  width: 72px;
+  font-size: 10px;
+}
+
+.business-landing--mockup .copy-button {
+  min-height: 40px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.business-landing--mockup .details-list {
   gap: 8px;
 }
 
-.mini-preview dt {
-  color: #8a6c5d;
-  font-size: 13px;
-  font-weight: 900;
+.business-landing--mockup .details-list dt,
+.business-landing--mockup .details-list dd,
+.business-landing--mockup .final-cta p,
+.business-landing--mockup .map-link {
+  font-size: 11px;
 }
 
-.mini-preview dd {
-  margin: 0;
-  color: #211f1c;
-  font-size: 14px;
-  font-weight: 850;
-  overflow-wrap: anywhere;
+.business-landing--mockup .business-footer {
+  padding: 16px 12px 18px;
 }
 
-.mini-preview__transfer button {
-  background: #211f1c;
-  margin-top: 16px;
+.business-landing--mockup .business-footer__logo {
+  height: 14px;
+  max-width: 66px;
 }
 
-.mini-preview__info p {
-  color: #5c514b;
-  font-size: 14px;
-  font-weight: 800;
-  margin: 8px 0 0;
-}
-
-.mini-preview footer {
-  color: #7a6b62;
-  font-size: 13px;
-  font-weight: 900;
-  padding: 24px 0 6px;
-  text-align: center;
+.business-landing--mockup .business-footer__credit {
+  font-size: 9px;
 }
 
 @media (max-width: 900px) {
@@ -1078,10 +1101,6 @@ select {
     border-radius: 31px;
   }
 
-  .mini-preview dl div {
-    grid-template-columns: 1fr;
-    gap: 2px;
-  }
 }
 
 .home-page {
@@ -2570,6 +2589,31 @@ select {
   background: var(--accent-color);
   color: #fff;
   font-size: 22px;
+}
+
+.puntoqr-page.puntoqr-page--mockup {
+  display: block;
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.business-landing.business-landing--mockup {
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.business-landing.business-landing--mockup .business-header {
+  width: 100%;
+  padding: 0;
 }
 
 .missing-page {

@@ -2,16 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
-import {
-  HiOutlineArrowRight,
-  HiOutlineBanknotes,
-  HiOutlineBookOpen,
-  HiOutlineMapPin,
-} from "react-icons/hi2";
+import { HiOutlineArrowRight } from "react-icons/hi2";
 import type { PuntoQrClient } from "@/types/puntoqr";
-
-const SCROLL_DISTANCE = 360;
+import { BusinessLanding } from "./BusinessLanding";
 
 type ScrollPhoneDemoProps = {
   client: PuntoQrClient;
@@ -20,13 +13,30 @@ type ScrollPhoneDemoProps = {
 
 export function ScrollPhoneDemo({ client, whatsappUrl }: ScrollPhoneDemoProps) {
   const phoneRef = useRef<HTMLDivElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const [phoneScrollY, setPhoneScrollY] = useState(0);
+  const [maxScrollY, setMaxScrollY] = useState(0);
 
   useEffect(() => {
     const phone = phoneRef.current;
+    const viewport = viewportRef.current;
+    const content = contentRef.current;
 
-    if (!phone) {
+    if (!phone || !viewport || !content) {
       return;
+    }
+
+    const viewportElement = viewport;
+    const contentElement = content;
+
+    function updateMaxScroll() {
+      const nextMax = Math.max(
+        0,
+        contentElement.scrollHeight - viewportElement.clientHeight,
+      );
+      setMaxScrollY(nextMax);
+      setPhoneScrollY((current) => Math.min(current, nextMax));
     }
 
     function handlePhoneWheel(event: WheelEvent) {
@@ -35,16 +45,19 @@ export function ScrollPhoneDemo({ client, whatsappUrl }: ScrollPhoneDemoProps) {
 
       setPhoneScrollY((current) => {
         const next = current + event.deltaY;
-        return Math.min(Math.max(next, 0), SCROLL_DISTANCE);
+        return Math.min(Math.max(next, 0), maxScrollY);
       });
     }
 
+    updateMaxScroll();
     phone.addEventListener("wheel", handlePhoneWheel, { passive: false });
+    window.addEventListener("resize", updateMaxScroll);
 
     return () => {
       phone.removeEventListener("wheel", handlePhoneWheel);
+      window.removeEventListener("resize", updateMaxScroll);
     };
-  }, []);
+  }, [maxScrollY]);
 
 
   return (
@@ -83,94 +96,13 @@ export function ScrollPhoneDemo({ client, whatsappUrl }: ScrollPhoneDemoProps) {
           ref={phoneRef}
         >
           <span className="scroll-phone-notch" aria-hidden="true" />
-          <div className="scroll-phone-viewport">
-            <div className="scroll-phone-content">
-              <MiniLandingPreview client={client} />
+          <div className="scroll-phone-viewport" ref={viewportRef}>
+            <div className="scroll-phone-content" ref={contentRef}>
+              <BusinessLanding client={client} previewMode />
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-type MiniLandingPreviewProps = {
-  client: PuntoQrClient;
-};
-
-function MiniLandingPreview({ client }: MiniLandingPreviewProps) {
-  const transfer = client.datosTransferencia;
-  const initial = client.nombreNegocio.charAt(0);
-
-  return (
-    <article className="mini-preview">
-      <header className="mini-preview__cover">
-        <span>{client.ciudad}</span>
-      </header>
-      <div className="mini-preview__body">
-        <div className="mini-preview__avatar">{initial}</div>
-        <p className="mini-preview__eyebrow">{client.rubro}</p>
-        <h3>{client.nombreNegocio}</h3>
-        <p className="mini-preview__description">{client.descripcion}</p>
-        <button className="mini-preview__whatsapp" type="button">
-          <FaWhatsapp aria-hidden="true" />
-          Pedir por WhatsApp
-          <HiOutlineArrowRight aria-hidden="true" />
-        </button>
-        <div className="mini-preview__actions">
-          <span>
-            <HiOutlineBookOpen aria-hidden="true" />
-            Catálogo
-          </span>
-          <span>
-            <FaInstagram aria-hidden="true" />
-            Instagram
-          </span>
-          <span>
-            <HiOutlineMapPin aria-hidden="true" />
-            Ubicación
-          </span>
-        </div>
-        <section className="mini-preview__transfer">
-          <h4>Datos de transferencia</h4>
-          <dl>
-            <div>
-              <dt>Titular</dt>
-              <dd>{transfer.titular}</dd>
-            </div>
-            <div>
-              <dt>RUT</dt>
-              <dd>{transfer.rut}</dd>
-            </div>
-            <div>
-              <dt>Banco</dt>
-              <dd>{transfer.banco}</dd>
-            </div>
-            <div>
-              <dt>Cuenta</dt>
-              <dd>{transfer.tipoCuenta}</dd>
-            </div>
-            <div>
-              <dt>Número</dt>
-              <dd>{transfer.numeroCuenta}</dd>
-            </div>
-            <div>
-              <dt>Correo</dt>
-              <dd>{transfer.correo}</dd>
-            </div>
-          </dl>
-          <button type="button">
-            <HiOutlineBanknotes aria-hidden="true" />
-            Copiar datos de transferencia
-          </button>
-        </section>
-        <section className="mini-preview__info">
-          <h4>Información</h4>
-          <p>{client.horario}</p>
-          <p>{client.ubicacionTexto}</p>
-        </section>
-        <footer>Creado con PuntoQR</footer>
-      </div>
-    </article>
   );
 }

@@ -16,26 +16,31 @@ import { TransferSection } from "./TransferSection";
 
 type BusinessLandingProps = {
   client: PuntoQrClient;
+  previewMode?: boolean;
 };
 
-export function BusinessLanding({ client }: BusinessLandingProps) {
+export function BusinessLanding({ client, previewMode = false }: BusinessLandingProps) {
   const templateClass = `business-landing--${client.estiloPlantilla}`;
+  const previewClass = previewMode ? "business-landing--mockup" : "";
   const isAppTemplate = client.estiloPlantilla === "app";
   const primaryCtaLabel = client.ctaPrincipalLabel ?? "Pedir por WhatsApp";
   const catalogoLabel = client.catalogoLabel ?? "Catálogo";
   const instagramLabel = client.instagramLabel ?? "Instagram";
   const ubicacionLabel = client.ubicacionLabel ?? "Ubicación";
+  const Root = previewMode ? "div" : "main";
 
   return (
-    <main
-      className={`puntoqr-page puntoqr-page--${client.estiloPlantilla}`}
+    <Root
+      className={`puntoqr-page puntoqr-page--${client.estiloPlantilla} ${
+        previewMode ? "puntoqr-page--mockup" : ""
+      }`}
       style={
         {
           "--accent-color": client.colorPrincipal,
         } as React.CSSProperties
       }
     >
-      <article className={`business-landing ${templateClass}`}>
+      <article className={`business-landing ${templateClass} ${previewClass}`}>
         <header className="business-hero" aria-labelledby="business-name">
           <BusinessHeader client={client} />
           <BusinessProfile client={client} />
@@ -126,6 +131,6 @@ export function BusinessLanding({ client }: BusinessLandingProps) {
         ) : null}
         <BusinessFooter showBranding={client.showPuntoQRBranding ?? true} />
       </article>
-    </main>
+    </Root>
   );
 }
