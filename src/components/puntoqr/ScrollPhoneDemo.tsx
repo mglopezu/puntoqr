@@ -15,8 +15,10 @@ export function ScrollPhoneDemo({ client, whatsappUrl }: ScrollPhoneDemoProps) {
   const phoneRef = useRef<HTMLDivElement>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const maxScrollYRef = useRef(0);
+  const phoneScrollYRef = useRef(0);
+  const touchStartYRef = useRef<number | null>(null);
   const [phoneScrollY, setPhoneScrollY] = useState(0);
-  const [maxScrollY, setMaxScrollY] = useState(0);
 
   useEffect(() => {
     const phone = phoneRef.current;
@@ -35,29 +37,78 @@ export function ScrollPhoneDemo({ client, whatsappUrl }: ScrollPhoneDemoProps) {
         0,
         contentElement.scrollHeight - viewportElement.clientHeight,
       );
-      setMaxScrollY(nextMax);
-      setPhoneScrollY((current) => Math.min(current, nextMax));
+      maxScrollYRef.current = nextMax;
+      setPhoneScrollY((current) => {
+        const next = Math.min(current, nextMax);
+        phoneScrollYRef.current = next;
+        return next;
+      });
+    }
+
+    function movePhoneContent(deltaY: number) {
+      const current = phoneScrollYRef.current;
+      const next = Math.min(Math.max(current + deltaY, 0), maxScrollYRef.current);
+
+      if (next === current) {
+        return false;
+      }
+
+      phoneScrollYRef.current = next;
+      setPhoneScrollY(next);
+      return true;
     }
 
     function handlePhoneWheel(event: WheelEvent) {
-      event.preventDefault();
-      event.stopPropagation();
+      const moved = movePhoneContent(event.deltaY);
 
-      setPhoneScrollY((current) => {
-        const next = current + event.deltaY;
-        return Math.min(Math.max(next, 0), maxScrollY);
-      });
+      if (moved) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    }
+
+    function handleTouchStart(event: TouchEvent) {
+      touchStartYRef.current = event.touches[0]?.clientY ?? null;
+    }
+
+    function handleTouchMove(event: TouchEvent) {
+      const previousTouchY = touchStartYRef.current;
+      const currentTouchY = event.touches[0]?.clientY;
+
+      if (previousTouchY === null || currentTouchY === undefined) {
+        return;
+      }
+
+      const moved = movePhoneContent(previousTouchY - currentTouchY);
+      touchStartYRef.current = currentTouchY;
+
+      if (moved) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    }
+
+    function handleTouchEnd() {
+      touchStartYRef.current = null;
     }
 
     updateMaxScroll();
     phone.addEventListener("wheel", handlePhoneWheel, { passive: false });
+    phone.addEventListener("touchstart", handleTouchStart, { passive: true });
+    phone.addEventListener("touchmove", handleTouchMove, { passive: false });
+    phone.addEventListener("touchend", handleTouchEnd);
+    phone.addEventListener("touchcancel", handleTouchEnd);
     window.addEventListener("resize", updateMaxScroll);
 
     return () => {
       phone.removeEventListener("wheel", handlePhoneWheel);
+      phone.removeEventListener("touchstart", handleTouchStart);
+      phone.removeEventListener("touchmove", handleTouchMove);
+      phone.removeEventListener("touchend", handleTouchEnd);
+      phone.removeEventListener("touchcancel", handleTouchEnd);
       window.removeEventListener("resize", updateMaxScroll);
     };
-  }, [maxScrollY]);
+  }, []);
 
 
   return (

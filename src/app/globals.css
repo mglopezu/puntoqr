@@ -700,6 +700,8 @@ select {
   box-shadow: 0 34px 90px rgba(7, 29, 51, 0.28);
   cursor: ns-resize;
   overflow: hidden;
+  touch-action: none;
+  user-select: none;
 }
 
 .scroll-phone-notch {
