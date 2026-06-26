@@ -18,7 +18,7 @@ export const puntoQrClients: PuntoQrClient[] = [
     horario: "Lunes a sábado, 10:00 a 19:00",
     colorPrincipal: "#B96782",
     logoUrl: "/puntoqr/martina.png",
-    portadaUrl: "/puntoqr/dulces.png",
+    portadaUrl: "/puntoqr/bannermartina.png",
     portadaAlt:
       "Vitrina con tortas, macarons y dulces artesanales de Dulces Martina en Talca",
     logoAlt: "Logo de Dulces Martina, repostería artesanal en Talca",
