@@ -36,6 +36,15 @@ export function GallerySection({ client }: GallerySectionProps) {
           </article>
         ))}
       </div>
+
+      <div className="gallery-dots" aria-hidden="true">
+        {gallery.items.map((item, index) => (
+          <span
+            className={index === 0 ? "gallery-dot gallery-dot--active" : "gallery-dot"}
+            key={item.title}
+          />
+        ))}
+      </div>
     </section>
   );
 }
