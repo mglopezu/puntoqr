@@ -1,5 +1,5 @@
 const PUNTOQR_URL = process.env.NEXT_PUBLIC_PUNTOQR_URL ?? "/";
-const PUNTOQR_LOGO_URL = "/puntoqr/logo-puntoqr.png";
+const PUNTOQR_LOGO_URL = "/puntoqr/logosineslogan-transparente.png";
 
 type BusinessFooterProps = {
   showBranding?: boolean;
