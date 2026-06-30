@@ -1,4 +1,5 @@
-import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaLocationDot, FaWhatsapp } from "react-icons/fa6";
+import { SiBookingdotcom, SiFacebook } from "react-icons/si";
 import {
   HiOutlineBanknotes,
   HiOutlineBookOpen,
@@ -89,7 +90,7 @@ export function BusinessLanding({ client, previewMode = false }: BusinessLanding
                 <ActionButton
                   ariaLabel={action.ariaLabel ?? `${action.label} de ${client.nombreNegocio}`}
                   href={action.href}
-                  icon={getQuickActionIcon(action.icon)}
+                  icon={getQuickActionIcon(action.icon, client.slug)}
                   key={`${action.label}-${action.href}`}
                   variant="compact"
                 >
@@ -148,7 +149,20 @@ export function BusinessLanding({ client, previewMode = false }: BusinessLanding
   );
 }
 
-function getQuickActionIcon(icon: QuickActionIcon) {
+function getQuickActionIcon(icon: QuickActionIcon, slug: string) {
+  if (slug === "hotel-vidal") {
+    switch (icon) {
+      case "booking":
+        return <SiBookingdotcom className="brand-action-icon" />;
+      case "facebook":
+        return <SiFacebook className="brand-action-icon" />;
+      case "map":
+        return <FaLocationDot className="brand-action-icon" />;
+      default:
+        break;
+    }
+  }
+
   switch (icon) {
     case "booking":
       return <HiOutlineBookmark />;

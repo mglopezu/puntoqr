@@ -1,4 +1,4 @@
-import { HiOutlineClock, HiOutlineEnvelope, HiOutlineMapPin } from "react-icons/hi2";
+import { HiOutlineClock, HiOutlineEnvelope, HiOutlineMapPin, HiOutlinePhone } from "react-icons/hi2";
 import type { PuntoQrClient } from "@/types/puntoqr";
 
 type LocationSectionProps = {
@@ -6,6 +6,8 @@ type LocationSectionProps = {
 };
 
 export function LocationSection({ client }: LocationSectionProps) {
+  const phoneHref = `tel:${client.whatsapp.replace(/[^\d+]/g, "")}`;
+
   return (
     <section className="info-section" aria-labelledby="details-title">
       <h2 className="info-section__title" id="details-title">
@@ -26,6 +28,17 @@ export function LocationSection({ client }: LocationSectionProps) {
           </dt>
           <dd>
             {client.ubicacionTexto}
+          </dd>
+        </div>
+        <div>
+          <dt>
+            <HiOutlinePhone aria-hidden="true" />
+            Teléfono
+          </dt>
+          <dd>
+            <a className="inline-link" href={phoneHref}>
+              {formatPhoneForDisplay(client.whatsapp)}
+            </a>
           </dd>
         </div>
         {client.contactEmail ? (
@@ -52,4 +65,14 @@ export function LocationSection({ client }: LocationSectionProps) {
       </a>
     </section>
   );
+}
+
+function formatPhoneForDisplay(phone: string) {
+  const digits = phone.replace(/\D/g, "");
+
+  if (digits.length === 11 && digits.startsWith("56")) {
+    return `+56 ${digits.slice(2, 3)} ${digits.slice(3, 7)} ${digits.slice(7)}`;
+  }
+
+  return phone;
 }
