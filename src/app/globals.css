@@ -2546,14 +2546,14 @@ select {
 }
 
 .gallery-carousel {
-  display: grid;
-  grid-auto-columns: minmax(0, 100%);
-  grid-auto-flow: column;
-  gap: 12px;
+  display: flex;
   overflow-x: auto;
   padding: 0 0 4px;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .gallery-carousel::-webkit-scrollbar {
@@ -2561,12 +2561,15 @@ select {
 }
 
 .gallery-card {
+  flex: 0 0 100%;
+  min-width: 100%;
   overflow: hidden;
   border: 1px solid rgba(33, 31, 28, 0.08);
   border-radius: 18px;
   background: #fff;
   box-shadow: 0 14px 32px rgba(7, 29, 51, 0.09);
-  scroll-snap-align: start;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 }
 
 .gallery-card__image {
@@ -2608,8 +2611,11 @@ select {
   display: block;
   width: 8px;
   height: 8px;
+  border: 0;
   border-radius: 999px;
   background: rgba(7, 29, 51, 0.26);
+  cursor: pointer;
+  padding: 0;
 }
 
 .gallery-dot--active {
