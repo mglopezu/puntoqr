@@ -1,4 +1,4 @@
-const PUNTOQR_URL = process.env.NEXT_PUBLIC_PUNTOQR_URL ?? "/";
+const PUNTOQR_URL = process.env.NEXT_PUBLIC_PUNTOQR_URL ?? "https://puntoqr.cl";
 const PUNTOQR_LOGO_URL = "/puntoqr/logosineslogan-transparente.png";
 
 type BusinessFooterProps = {
