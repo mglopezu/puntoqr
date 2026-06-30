@@ -2043,6 +2043,29 @@ select {
   object-fit: cover;
 }
 
+.business-landing--hotel-vidal {
+  border-color: rgba(10, 71, 120, 0.12);
+  background: #fffdf9;
+}
+
+.business-landing--hotel-vidal .business-header__image {
+  object-position: center 42%;
+}
+
+.business-landing--hotel-vidal .business-header--has-cover::after {
+  background: linear-gradient(180deg, rgba(7, 29, 51, 0.06), rgba(7, 29, 51, 0.32));
+}
+
+.business-landing--hotel-vidal .business-profile__logo {
+  border-color: #fff;
+  background: #fff;
+}
+
+.business-landing--hotel-vidal .business-profile__logo img {
+  object-fit: contain;
+  padding: 8px;
+}
+
 .business-landing--app .business-profile__logo {
   border-color: #211f1c;
   color: #211f1c;
@@ -2135,6 +2158,10 @@ select {
   gap: 7px;
 }
 
+.business-landing--hotel-vidal .quick-action-row {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .action-button {
   display: flex;
   min-height: 50px;
@@ -2171,6 +2198,11 @@ select {
   font-size: 12px;
   padding: 7px 4px;
   text-align: center;
+}
+
+.business-landing--hotel-vidal .action-button--compact {
+  min-height: 70px;
+  font-size: 11px;
 }
 
 .business-landing--simple .action-button--compact {
@@ -2253,6 +2285,21 @@ select {
 
 .action-button--primary .action-button__icon {
   background: rgba(255, 255, 255, 0.22);
+}
+
+.business-landing--hotel-vidal .action-button:not(.action-button--primary),
+.business-landing--hotel-vidal .info-section {
+  border-color: rgba(10, 71, 120, 0.12);
+}
+
+.business-landing--hotel-vidal .action-button__icon {
+  background: rgba(10, 71, 120, 0.08);
+  color: #0a4778;
+}
+
+.business-landing--hotel-vidal .action-button--primary .action-button__icon {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
 }
 
 .action-button__arrow {
@@ -2466,6 +2513,99 @@ select {
   font-size: 13px;
   font-weight: 650;
   line-height: 1.45;
+}
+
+.gallery-section {
+  display: grid;
+  gap: 14px;
+  margin: 4px 0 16px;
+}
+
+.gallery-section__header {
+  border: 1px solid rgba(138, 31, 23, 0.14);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), transparent 12rem),
+    linear-gradient(135deg, rgba(138, 31, 23, 0.08), rgba(10, 71, 120, 0.08));
+  padding: 16px;
+}
+
+.gallery-section__title {
+  margin: 0;
+  color: #211f1c;
+  font-size: 22px;
+  line-height: 1.05;
+}
+
+.gallery-section__header p {
+  margin: 9px 0 0;
+  color: #5d6170;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.gallery-carousel {
+  display: grid;
+  grid-auto-columns: minmax(238px, 82%);
+  grid-auto-flow: column;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 0 2px 8px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.gallery-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-card {
+  overflow: hidden;
+  border: 1px solid rgba(33, 31, 28, 0.08);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(7, 29, 51, 0.09);
+  scroll-snap-align: start;
+}
+
+.gallery-card__image {
+  display: block;
+  width: 100%;
+  height: 176px;
+  object-fit: cover;
+}
+
+.gallery-card__body {
+  display: grid;
+  gap: 6px;
+  padding: 13px;
+}
+
+.gallery-card h3 {
+  margin: 0;
+  color: #211f1c;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.gallery-card p {
+  margin: 0;
+  color: #5d6170;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.business-landing--hotel-vidal .gallery-card {
+  border-color: rgba(10, 71, 120, 0.12);
+}
+
+.business-landing--hotel-vidal .business-profile__eyebrow,
+.business-landing--hotel-vidal .trust-line,
+.business-landing--hotel-vidal .transfer-row dt,
+.business-landing--hotel-vidal .details-list dt {
+  color: #8a1f17;
 }
 
 .business-landing--premium .catalog-section__header,

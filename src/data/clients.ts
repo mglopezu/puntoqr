@@ -163,6 +163,127 @@ export const puntoQrClients: PuntoQrClient[] = [
     },
   },
   {
+    slug: "hotel-vidal",
+    nombreNegocio: "Hotel Vidal",
+    rubro: "Hotel en el centro de Pichilemu",
+    descripcion:
+      "Habitaciones dobles y familiares con baño privado y estacionamiento en pleno centro de Pichilemu.",
+    ciudad: "Pichilemu",
+    whatsapp: "+56962466766",
+    mensajeWhatsapp:
+      "Hola Hotel Vidal, quiero consultar disponibilidad y reservas.",
+    instagram: "https://web.facebook.com/hotelvidal/?locale=es_LA",
+    catalogoUrl:
+      "https://www.booking.com/hotel/cl/vidal.es.html?aid=2378099&label=olr-gmcc%3ACj0KCQjwr4jSBhCSARIsAOX1E-LzK5kxDl4E8lHnukVvs4D47vLerwMXOI3aD-NUZcqhmpEhrVCkH4oaAr73EALw_wcB&sid=465d8201c601fa0895b790a4271c308e&checkin=2026-07-07&checkout=2026-07-08&dest_id=-896153&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&soh=1&sr_order=popularity&srepoch=1782789114&srpvid=ddee1677f06000f3&type=total&ucfs=1&#no_availability_msg",
+    ubicacionTexto: "Federico Errazuriz 414, Pichilemu",
+    ubicacionUrl:
+      "https://www.google.com/maps/place/Federico+Errázuriz+414,+3220317+Pichilemu,+O'Higgins/@-34.3873359,-72.0106314,17z/data=!3m1!4b1!4m6!3m5!1s0x966159d6ff651007:0x9258944bedc47822!8m2!3d-34.3873359!4d-72.0080565!16s%2Fg%2F11tt2x8xk4?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D",
+    horario: "Atención para consultas y reservas por WhatsApp",
+    contactEmail: "hotelvidalenpichilemu@gmail.com",
+    colorPrincipal: "#8A1F17",
+    logoUrl: "/puntoqr/hotel-vidal-logo.png",
+    portadaUrl: "/puntoqr/hotel-vidal-banner.jpg",
+    portadaAlt:
+      "Fachada de Hotel Vidal en Federico Errazuriz 414, Pichilemu",
+    logoAlt: "Logo de Hotel Vidal en Pichilemu",
+    showPuntoQRBranding: true,
+    estiloPlantilla: "simple",
+    lineaConfianza:
+      "Centro de Pichilemu · Baño privado · Estacionamiento",
+    ctaPrincipalLabel: "Consultar disponibilidad",
+    catalogoLabel: "Booking",
+    instagramLabel: "Facebook",
+    ubicacionLabel: "Cómo llegar",
+    transferTitle: "Datos para transferir",
+    transferMicrocopy:
+      "Copia los datos y envía el comprobante por WhatsApp para confirmar tu reserva.",
+    copyAllLabel: "Copiar todos los datos",
+    copyAllSuccessMessage:
+      "Datos copiados. Ahora envía el comprobante por WhatsApp.",
+    copyFieldSuccessMessage: "Dato copiado",
+    detailsTitle: "Información y ubicación",
+    mapsLabel: "Ver en Google Maps",
+    finalCtaText: "¿Quieres consultar disponibilidad para tus fechas?",
+    finalCtaLabel: "Reservar por WhatsApp",
+    quickActions: [
+      {
+        label: "Booking",
+        href:
+          "https://www.booking.com/hotel/cl/vidal.es.html?aid=2378099&label=olr-gmcc%3ACj0KCQjwr4jSBhCSARIsAOX1E-LzK5kxDl4E8lHnukVvs4D47vLerwMXOI3aD-NUZcqhmpEhrVCkH4oaAr73EALw_wcB&sid=465d8201c601fa0895b790a4271c308e&checkin=2026-07-07&checkout=2026-07-08&dest_id=-896153&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&soh=1&sr_order=popularity&srepoch=1782789114&srpvid=ddee1677f06000f3&type=total&ucfs=1&#no_availability_msg",
+        ariaLabel: "Ver Hotel Vidal en Booking",
+        icon: "booking",
+      },
+      {
+        label: "Facebook",
+        href: "https://web.facebook.com/hotelvidal/?locale=es_LA",
+        ariaLabel: "Ver Facebook de Hotel Vidal",
+        icon: "facebook",
+      },
+      {
+        label: "Cómo llegar",
+        href:
+          "https://www.google.com/maps/place/Federico+Errázuriz+414,+3220317+Pichilemu,+O'Higgins/@-34.3873359,-72.0106314,17z/data=!3m1!4b1!4m6!3m5!1s0x966159d6ff651007:0x9258944bedc47822!8m2!3d-34.3873359!4d-72.0080565!16s%2Fg%2F11tt2x8xk4?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D",
+        ariaLabel: "Cómo llegar a Hotel Vidal",
+        icon: "map",
+      },
+      {
+        label: "Guardar contacto",
+        href: "/puntoqr/hotel-vidal-contacto.vcf",
+        ariaLabel: "Guardar contacto de Pamela Ley, Hotel Vidal",
+        icon: "contact",
+      },
+    ],
+    gallerySection: {
+      title: "Conoce Hotel Vidal",
+      intro:
+        "Un lugar sencillo y acogedor para descansar en Pichilemu, con habitaciones privadas, desayuno y ubicación céntrica.",
+      items: [
+        {
+          title: "Habitaciones privadas",
+          description: "Opciones dobles y familiares con baño privado.",
+          imageUrl: "/puntoqr/hotel-vidal-habitacion.jpg",
+          imageAlt: "Habitación doble de Hotel Vidal en Pichilemu",
+        },
+        {
+          title: "Desayuno",
+          description: "Espacio cómodo para comenzar el día antes de salir a recorrer.",
+          imageUrl: "/puntoqr/hotel-vidal-desayuno.jpg",
+          imageAlt: "Desayuno servido en Hotel Vidal",
+        },
+        {
+          title: "Comedor",
+          description: "Ambiente cálido para compartir café, té y desayuno.",
+          imageUrl: "/puntoqr/hotel-vidal-comedor.jpg",
+          imageAlt: "Comedor de Hotel Vidal en Pichilemu",
+        },
+        {
+          title: "Amenities",
+          description: "Detalles preparados para una estadía cómoda.",
+          imageUrl: "/puntoqr/hotel-vidal-amenities.jpg",
+          imageAlt: "Toallas y amenities en habitación de Hotel Vidal",
+          imagePosition: "center 45%",
+        },
+        {
+          title: "Ubicación céntrica",
+          description: "En Federico Errazuriz 414, cerca de servicios y comercio.",
+          imageUrl: "/puntoqr/hotel-vidal-fachada.jpg",
+          imageAlt: "Fachada principal de Hotel Vidal en Pichilemu",
+        },
+      ],
+    },
+    seoTitle: "Hotel Vidal | Hotel en el centro de Pichilemu",
+    seoDescription:
+      "Hotel Vidal en Pichilemu. Habitaciones dobles y familiares con baño privado, estacionamiento y ubicación céntrica. Consulta disponibilidad por WhatsApp.",
+    datosTransferencia: {
+      titular: "Hotel Vidal SpA",
+      rut: "76.123.456-7",
+      banco: "Banco Estado",
+      tipoCuenta: "Cuenta corriente",
+      numeroCuenta: "123456789",
+      correo: "hotelvidalenpichilemu@gmail.com",
+    },
+  },
+  {
     slug: "cafe-luna",
     nombreNegocio: "Café Luna",
     rubro: "Cafetería de especialidad",

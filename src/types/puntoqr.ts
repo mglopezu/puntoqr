@@ -32,6 +32,29 @@ export type CatalogSection = {
   specialOrdersWhatsappMessage?: string;
 };
 
+export type QuickActionIcon = "booking" | "facebook" | "map" | "contact" | "catalog" | "instagram";
+
+export type QuickAction = {
+  label: string;
+  href: string;
+  ariaLabel?: string;
+  icon: QuickActionIcon;
+};
+
+export type GalleryItem = {
+  title: string;
+  description: string;
+  imageUrl: string;
+  imageAlt: string;
+  imagePosition?: string;
+};
+
+export type GallerySection = {
+  title: string;
+  intro: string;
+  items: GalleryItem[];
+};
+
 export type PuntoQrClient = {
   slug: string;
   nombreNegocio: string;
@@ -45,6 +68,7 @@ export type PuntoQrClient = {
   ubicacionTexto: string;
   ubicacionUrl: string;
   horario: string;
+  contactEmail?: string;
   colorPrincipal: string;
   logoUrl?: string;
   portadaUrl?: string;
@@ -67,6 +91,9 @@ export type PuntoQrClient = {
   finalCtaText?: string;
   finalCtaLabel?: string;
   catalogSection?: CatalogSection;
+  gallerySection?: GallerySection;
+  quickActions?: QuickAction[];
+  hideTransferSection?: boolean;
   seoTitle?: string;
   seoDescription?: string;
   datosTransferencia: TransferData;

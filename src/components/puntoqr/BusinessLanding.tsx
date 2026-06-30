@@ -1,17 +1,20 @@
-import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import {
   HiOutlineBanknotes,
   HiOutlineBookOpen,
+  HiOutlineBookmark,
   HiOutlineHome,
   HiOutlineMapPin,
+  HiOutlineUserPlus,
 } from "react-icons/hi2";
 import { formatWhatsappUrl } from "@/lib/puntoqr";
-import type { PuntoQrClient } from "@/types/puntoqr";
+import type { PuntoQrClient, QuickActionIcon } from "@/types/puntoqr";
 import { ActionButton } from "./ActionButton";
 import { BusinessFooter } from "./BusinessFooter";
 import { BusinessHeader } from "./BusinessHeader";
 import { BusinessProfile } from "./BusinessProfile";
 import { CatalogSection } from "./CatalogSection";
+import { GallerySection } from "./GallerySection";
 import { LocationSection } from "./LocationSection";
 import { TransferSection } from "./TransferSection";
 
@@ -28,6 +31,26 @@ export function BusinessLanding({ client, previewMode = false }: BusinessLanding
   const catalogoLabel = client.catalogoLabel ?? "Catálogo";
   const instagramLabel = client.instagramLabel ?? "Instagram";
   const ubicacionLabel = client.ubicacionLabel ?? "Ubicación";
+  const quickActions = client.quickActions ?? [
+    {
+      label: catalogoLabel,
+      href: client.catalogoUrl,
+      ariaLabel: `${catalogoLabel} de ${client.nombreNegocio}`,
+      icon: "catalog" as const,
+    },
+    {
+      label: instagramLabel,
+      href: client.instagram,
+      ariaLabel: `${instagramLabel} de ${client.nombreNegocio}`,
+      icon: "instagram" as const,
+    },
+    {
+      label: ubicacionLabel,
+      href: client.ubicacionUrl,
+      ariaLabel: `${ubicacionLabel} de ${client.nombreNegocio}`,
+      icon: "map" as const,
+    },
+  ];
   const Root = previewMode ? "div" : "main";
 
   return (
@@ -41,7 +64,7 @@ export function BusinessLanding({ client, previewMode = false }: BusinessLanding
         } as React.CSSProperties
       }
     >
-      <article className={`business-landing ${templateClass} ${previewClass}`}>
+      <article className={`business-landing ${templateClass} business-landing--${client.slug} ${previewClass}`}>
         <header className="business-hero" aria-labelledby="business-name">
           <BusinessHeader client={client} />
           <BusinessProfile client={client} />
@@ -62,37 +85,25 @@ export function BusinessLanding({ client, previewMode = false }: BusinessLanding
               {primaryCtaLabel}
             </ActionButton>
             <div className="quick-action-row">
-              <ActionButton
-                ariaLabel={`${catalogoLabel} de ${client.nombreNegocio}`}
-                href={client.catalogoUrl}
-                icon={<HiOutlineBookOpen />}
-                variant="compact"
-              >
-                {catalogoLabel}
-              </ActionButton>
-              <ActionButton
-                ariaLabel={`${instagramLabel} de ${client.nombreNegocio}`}
-                href={client.instagram}
-                icon={<FaInstagram />}
-                variant="compact"
-              >
-                {instagramLabel}
-              </ActionButton>
-              <ActionButton
-                ariaLabel={`${ubicacionLabel} de ${client.nombreNegocio}`}
-                href={client.ubicacionUrl}
-                icon={<HiOutlineMapPin />}
-                variant="compact"
-              >
-                {ubicacionLabel}
-              </ActionButton>
+              {quickActions.map((action) => (
+                <ActionButton
+                  ariaLabel={action.ariaLabel ?? `${action.label} de ${client.nombreNegocio}`}
+                  href={action.href}
+                  icon={getQuickActionIcon(action.icon)}
+                  key={`${action.label}-${action.href}`}
+                  variant="compact"
+                >
+                  {action.label}
+                </ActionButton>
+              ))}
             </div>
           </nav>
           {client.lineaConfianza ? (
             <p className="trust-line">{client.lineaConfianza}</p>
           ) : null}
           <CatalogSection client={client} />
-          <TransferSection client={client} />
+          <GallerySection client={client} />
+          {client.hideTransferSection ? null : <TransferSection client={client} />}
           <LocationSection client={client} />
           {client.finalCtaText && client.finalCtaLabel ? (
             <section className="final-cta" aria-label="Consulta por WhatsApp">
@@ -135,4 +146,22 @@ export function BusinessLanding({ client, previewMode = false }: BusinessLanding
       </article>
     </Root>
   );
+}
+
+function getQuickActionIcon(icon: QuickActionIcon) {
+  switch (icon) {
+    case "booking":
+      return <HiOutlineBookmark />;
+    case "facebook":
+      return <FaFacebookF />;
+    case "contact":
+      return <HiOutlineUserPlus />;
+    case "instagram":
+      return <FaInstagram />;
+    case "map":
+      return <HiOutlineMapPin />;
+    case "catalog":
+    default:
+      return <HiOutlineBookOpen />;
+  }
 }

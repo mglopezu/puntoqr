@@ -1,4 +1,4 @@
-import { HiOutlineClock, HiOutlineMapPin } from "react-icons/hi2";
+import { HiOutlineClock, HiOutlineEnvelope, HiOutlineMapPin } from "react-icons/hi2";
 import type { PuntoQrClient } from "@/types/puntoqr";
 
 type LocationSectionProps = {
@@ -28,6 +28,19 @@ export function LocationSection({ client }: LocationSectionProps) {
             {client.ubicacionTexto}
           </dd>
         </div>
+        {client.contactEmail ? (
+          <div>
+            <dt>
+              <HiOutlineEnvelope aria-hidden="true" />
+              Correo
+            </dt>
+            <dd>
+              <a className="inline-link" href={`mailto:${client.contactEmail}`}>
+                {client.contactEmail}
+              </a>
+            </dd>
+          </div>
+        ) : null}
       </dl>
       <a
         className="map-link"
