@@ -167,7 +167,7 @@ export const puntoQrClients: PuntoQrClient[] = [
     nombreNegocio: "Hotel Vidal",
     rubro: "Hotel en el centro de Pichilemu",
     descripcion:
-      "Habitaciones dobles y familiares con baño privado y estacionamiento en pleno centro de Pichilemu.",
+      "Habitaciones dobles y familiares con baño privado en pleno centro de Pichilemu, a pasos de la playa.",
     ciudad: "Pichilemu",
     whatsapp: "+56962466766",
     mensajeWhatsapp:
@@ -189,7 +189,7 @@ export const puntoQrClients: PuntoQrClient[] = [
     showPuntoQRBranding: true,
     estiloPlantilla: "simple",
     lineaConfianza:
-      "Centro de Pichilemu · Baño privado · Estacionamiento",
+      "Centro de Pichilemu · Baño privado · Desayuno · Wifi",
     ctaPrincipalLabel: "Consultar disponibilidad",
     catalogoLabel: "Booking",
     instagramLabel: "Facebook",
