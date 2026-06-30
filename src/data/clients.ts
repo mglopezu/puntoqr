@@ -179,7 +179,7 @@ export const puntoQrClients: PuntoQrClient[] = [
     ubicacionUrl:
       "https://www.google.com/maps/place/Federico+Errázuriz+414,+3220317+Pichilemu,+O'Higgins/@-34.3873359,-72.0106314,17z/data=!3m1!4b1!4m6!3m5!1s0x966159d6ff651007:0x9258944bedc47822!8m2!3d-34.3873359!4d-72.0080565!16s%2Fg%2F11tt2x8xk4?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D",
     horario: "Atención para consultas y reservas por WhatsApp",
-    contactEmail: "hotelvidalenpichilemu@gmail.com",
+    contactEmail: "pichilemuhotelvidal@gmail.com",
     colorPrincipal: "#8A1F17",
     logoUrl: "/puntoqr/hotel-vidal-logo.png",
     portadaUrl: "/puntoqr/hotel-vidal-banner.jpg",
@@ -275,12 +275,12 @@ export const puntoQrClients: PuntoQrClient[] = [
     seoDescription:
       "Hotel Vidal en Pichilemu. Habitaciones dobles y familiares con baño privado, estacionamiento y ubicación céntrica. Consulta disponibilidad por WhatsApp.",
     datosTransferencia: {
-      titular: "Hotel Vidal SpA",
-      rut: "76.123.456-7",
+      titular: "Hotel Vidal",
+      rut: "9.526.825-0",
       banco: "Banco Estado",
-      tipoCuenta: "Cuenta corriente",
-      numeroCuenta: "123456789",
-      correo: "hotelvidalenpichilemu@gmail.com",
+      tipoCuenta: "Cuenta RUT",
+      numeroCuenta: "9526825",
+      correo: "pichilemuhotelvidal@gmail.com",
     },
   },
   {

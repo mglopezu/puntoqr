@@ -2297,6 +2297,17 @@ select {
   color: #0a4778;
 }
 
+.business-landing--hotel-vidal .action-button__icon:has(.brand-action-icon) {
+  border: 1px solid rgba(33, 31, 28, 0.08);
+  background: rgba(10, 71, 120, 0.08);
+  color: #0a4778;
+  box-shadow: none;
+}
+
+.business-landing--hotel-vidal .brand-action-icon {
+  font-size: 0.95em;
+}
+
 .business-landing--hotel-vidal .action-button--primary .action-button__icon {
   background: rgba(255, 255, 255, 0.22);
   color: #fff;
