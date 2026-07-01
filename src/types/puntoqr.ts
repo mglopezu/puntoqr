@@ -25,6 +25,7 @@ export type CatalogSection = {
   title: string;
   intro: string;
   categories: string[];
+  layout?: "grid" | "carousel";
   items: CatalogItem[];
   specialOrdersTitle?: string;
   specialOrdersText?: string;
