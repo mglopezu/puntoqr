@@ -126,10 +126,10 @@ select {
   display: grid;
   width: min(100%, 1180px);
   align-items: center;
-  gap: 38px;
-  grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+  gap: 28px 34px;
+  grid-template-columns: minmax(0, 0.86fr) minmax(460px, 1.14fr);
   margin: 0 auto;
-  padding: 38px 24px 54px;
+  padding: 38px 24px 42px;
 }
 
 .marketing-hero__copy h1,
@@ -145,7 +145,7 @@ select {
 
 .marketing-hero__copy h1 {
   max-width: 680px;
-  font-size: clamp(44px, 5.6vw, 68px);
+  font-size: clamp(42px, 5vw, 62px);
   line-height: 0.96;
 }
 
@@ -178,26 +178,121 @@ select {
 }
 
 .marketing-microcopy {
-  margin-top: 18px !important;
+  margin-top: 18px;
   color: #64748b !important;
   font-size: 14px !important;
   font-weight: 800;
 }
 
+.marketing-microcopy--wide {
+  grid-column: 1 / -1;
+  width: min(100%, 860px);
+  margin: -12px auto 0;
+  text-align: center;
+}
+
 .marketing-hero__visual {
   position: relative;
-  min-height: 520px;
+  min-height: 490px;
 }
 
 .marketing-hero__image {
   position: absolute;
-  inset: 28px 0 auto auto;
+  inset: 22px auto auto -24px;
   display: block;
-  width: min(100%, 620px);
+  width: min(calc(100% + 12px), 650px);
   height: 430px;
   object-fit: cover;
+  object-position: center;
   border-radius: 28px;
   box-shadow: 0 30px 80px rgba(7, 29, 51, 0.18);
+}
+
+.marketing-hero__phone-stage {
+  position: absolute;
+  top: 84px;
+  right: -72px;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+.marketing-hero__phone-link {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(7, 29, 51, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #071d33;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 0 12px;
+  text-decoration: none;
+  box-shadow: 0 14px 34px rgba(7, 29, 51, 0.12);
+}
+
+.scroll-phone-shell--hero {
+  width: 224px;
+  height: 424px;
+  border-width: 9px;
+  border-radius: 36px;
+  box-shadow: 0 28px 70px rgba(7, 29, 51, 0.34);
+}
+
+.scroll-phone-shell--hero .scroll-phone-notch {
+  top: 9px;
+  width: 66px;
+  height: 15px;
+}
+
+.scroll-phone-shell--hero .scroll-phone-viewport {
+  border-radius: 28px;
+}
+
+.scroll-phone-shell--hero .business-landing--mockup .business-header,
+.scroll-phone-shell--hero .business-landing--mockup.business-landing--simple .business-header--has-cover {
+  min-height: 108px;
+  border-radius: 28px 28px 0 0;
+}
+
+.scroll-phone-shell--hero .business-landing--mockup .business-profile {
+  padding: 0 15px 12px;
+}
+
+.scroll-phone-shell--hero .business-landing--mockup .business-profile__logo {
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-bottom: 8px;
+}
+
+.scroll-phone-shell--hero .business-landing--mockup .business-profile__eyebrow {
+  font-size: 10px;
+}
+
+.scroll-phone-shell--hero .business-landing--mockup .business-profile__title {
+  font-size: 22px;
+}
+
+.scroll-phone-shell--hero .business-landing--mockup .business-profile__description {
+  font-size: 11px;
+}
+
+.scroll-phone-shell--hero .business-landing--mockup .business-content {
+  padding: 0 15px 14px;
+}
+
+.scroll-phone-shell--hero .business-landing--mockup .action-button {
+  min-height: 42px;
+  font-size: 11px;
+}
+
+.scroll-phone-shell--hero .business-landing--mockup .action-button--compact {
+  min-height: 54px;
+  font-size: 9px;
 }
 
 .marketing-phone {
@@ -256,6 +351,12 @@ select {
     url("/puntoqr-velas-hero.png") center / cover;
 }
 
+.marketing-phone--dulces .marketing-phone__cover {
+  background:
+    linear-gradient(rgba(80, 48, 40, 0.18), rgba(80, 48, 40, 0.32)),
+    url("/puntoqr/bannerdulcesmartina.png") center 35% / cover;
+}
+
 .marketing-phone__cover span {
   display: inline-flex;
   padding: 4px 9px;
@@ -281,6 +382,16 @@ select {
   color: #fff;
   font-size: 19px;
   font-weight: 950;
+  overflow: hidden;
+}
+
+.marketing-phone__avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  background: transparent;
 }
 
 .marketing-phone__content {
@@ -639,6 +750,112 @@ select {
   width: min(100%, 380px);
 }
 
+.qr-demo-section {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding: 46px 24px;
+  scroll-margin-top: 86px;
+}
+
+.qr-demo-card {
+  display: grid;
+  align-items: center;
+  gap: 30px;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+  border: 1px solid rgba(7, 29, 51, 0.09);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(230, 90, 50, 0.12), transparent 24rem),
+    #fff;
+  box-shadow: 0 18px 48px rgba(7, 29, 51, 0.08);
+  padding: 30px;
+}
+
+.qr-demo-copy h2 {
+  max-width: 650px;
+  margin: 0;
+  color: #071d33;
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 1;
+}
+
+.qr-demo-copy p:not(.marketing-eyebrow) {
+  max-width: 620px;
+  color: #475569;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.qr-demo-copy ul {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.qr-demo-copy li {
+  color: #071d33;
+  font-weight: 850;
+}
+
+.qr-demo-copy li::before {
+  color: #e65a32;
+  content: "• ";
+}
+
+.qr-demo-visual {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  border: 1px solid rgba(230, 90, 50, 0.2);
+  border-radius: 24px;
+  background: #fffaf7;
+  color: #071d33;
+  padding: 18px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 16px 38px rgba(7, 29, 51, 0.08);
+  transition:
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.qr-demo-visual:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 42px rgba(7, 29, 51, 0.12);
+}
+
+.qr-demo-visual > span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 14px;
+  background: #fff1eb;
+  color: #e65a32;
+  font-size: 24px;
+}
+
+.qr-demo-visual img {
+  display: block;
+  width: min(100%, 230px);
+  aspect-ratio: 1;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.qr-demo-visual strong {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.qr-demo-visual small {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .scroll-phone-section {
   background: #f1f5f9;
   padding: 46px 24px;
@@ -702,6 +919,13 @@ select {
   overflow: hidden;
   touch-action: none;
   user-select: none;
+}
+
+.marketing-hero__phone-stage .scroll-phone-shell--hero {
+  width: 224px;
+  height: 424px;
+  border-width: 9px;
+  border-radius: 36px;
 }
 
 .scroll-phone-notch {
@@ -1064,11 +1288,11 @@ select {
   }
 
   .marketing-hero__copy h1 {
-    font-size: 39px;
+    font-size: 38px;
   }
 
   .marketing-hero__visual {
-    min-height: 430px;
+    min-height: 460px;
   }
 
   .marketing-hero__image {
@@ -1076,6 +1300,23 @@ select {
     width: 100%;
     height: 330px;
     border-radius: 22px;
+  }
+
+  .marketing-hero__phone-stage {
+    top: 82px;
+    right: -2px;
+    gap: 8px;
+  }
+
+  .marketing-microcopy--wide {
+    margin-top: -22px;
+    text-align: left;
+  }
+
+  .marketing-hero__phone-link {
+    min-height: 30px;
+    font-size: 11px;
+    padding-inline: 10px;
   }
 
   .marketing-phone {
@@ -1113,6 +1354,13 @@ select {
     margin: -17px 0 0 12px;
     border-width: 3px;
     font-size: 15px;
+  }
+
+  .marketing-phone__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
   }
 
   .marketing-phone__content {
@@ -1166,6 +1414,29 @@ select {
     font-size: 5.5px;
   }
 
+  .qr-demo-section {
+    padding: 34px 18px;
+  }
+
+  .qr-demo-card {
+    grid-template-columns: 1fr;
+    border-radius: 24px;
+    padding: 22px;
+  }
+
+  .qr-demo-copy h2 {
+    font-size: 34px;
+  }
+
+  .qr-demo-copy p:not(.marketing-eyebrow) {
+    font-size: 16px;
+  }
+
+  .qr-demo-visual {
+    justify-self: center;
+    width: min(100%, 300px);
+  }
+
   .marketing-section,
   .steps-section,
   .use-section,
@@ -1212,8 +1483,82 @@ select {
     border-radius: 44px;
   }
 
+  .scroll-phone-shell--hero {
+    width: 176px;
+    height: 334px;
+    border-width: 7px;
+    border-radius: 29px;
+  }
+
+  .scroll-phone-shell--hero .scroll-phone-notch {
+    top: 7px;
+    width: 46px;
+    height: 11px;
+  }
+
   .scroll-phone-viewport {
     border-radius: 31px;
+  }
+
+  .scroll-phone-shell--hero .scroll-phone-viewport {
+    border-radius: 22px;
+  }
+
+  .scroll-phone-shell--hero .business-landing--mockup .business-header,
+  .scroll-phone-shell--hero .business-landing--mockup.business-landing--simple .business-header--has-cover {
+    min-height: 78px;
+    border-radius: 22px 22px 0 0;
+  }
+
+  .scroll-phone-shell--hero .business-landing--mockup .business-profile {
+    padding: 0 10px 9px;
+  }
+
+  .scroll-phone-shell--hero .business-landing--mockup .business-profile__logo {
+    width: 38px;
+    height: 38px;
+    margin-top: -19px;
+    margin-bottom: 6px;
+    border-width: 3px;
+  }
+
+  .scroll-phone-shell--hero .business-landing--mockup .business-profile__eyebrow {
+    margin-bottom: 4px;
+    font-size: 7px;
+  }
+
+  .scroll-phone-shell--hero .business-landing--mockup .business-profile__title {
+    font-size: 15px;
+  }
+
+  .scroll-phone-shell--hero .business-landing--mockup .business-profile__description {
+    margin-top: 5px;
+    font-size: 7.5px;
+  }
+
+  .scroll-phone-shell--hero .business-landing--mockup .business-content {
+    padding: 0 10px 10px;
+  }
+
+  .scroll-phone-shell--hero .business-landing--mockup .action-button {
+    min-height: 32px;
+    border-radius: 9px;
+    font-size: 7px;
+    padding: 0 7px;
+  }
+
+  .scroll-phone-shell--hero .business-landing--mockup .action-button--compact {
+    min-height: 43px;
+    border-radius: 10px;
+    font-size: 6.8px;
+  }
+
+  .scroll-phone-shell--hero .business-landing--mockup .action-button__icon,
+  .scroll-phone-shell--hero .business-landing--mockup .action-button--compact .action-button__icon {
+    width: 18px;
+    height: 18px;
+    flex-basis: 18px;
+    font-size: 11px;
   }
 
 }

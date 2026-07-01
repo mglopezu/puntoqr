@@ -11,7 +11,15 @@ type ScrollPhoneDemoProps = {
   whatsappUrl: string;
 };
 
-export function ScrollPhoneDemo({ client, whatsappUrl }: ScrollPhoneDemoProps) {
+type InteractivePhoneMockupProps = {
+  client: PuntoQrClient;
+  className?: string;
+};
+
+export function InteractivePhoneMockup({
+  client,
+  className = "",
+}: InteractivePhoneMockupProps) {
   const phoneRef = useRef<HTMLDivElement>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -110,16 +118,30 @@ export function ScrollPhoneDemo({ client, whatsappUrl }: ScrollPhoneDemoProps) {
     };
   }, []);
 
-
   return (
-    <section
-      className="scroll-phone-section"
+    <div
+      className={`scroll-phone-shell ${className}`.trim()}
+      aria-label="Mini landing en acción"
+      ref={phoneRef}
       style={
         {
           "--phone-scroll-y": `-${Math.round(phoneScrollY)}px`,
         } as CSSProperties
       }
     >
+      <span className="scroll-phone-notch" aria-hidden="true" />
+      <div className="scroll-phone-viewport" ref={viewportRef}>
+        <div className="scroll-phone-content" ref={contentRef}>
+          <BusinessLanding client={client} previewMode />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ScrollPhoneDemo({ client, whatsappUrl }: ScrollPhoneDemoProps) {
+  return (
+    <section className="scroll-phone-section">
       <div className="scroll-phone-sticky">
         <div className="scroll-phone-copy">
           <p className="marketing-eyebrow">Mini landing móvil</p>
@@ -141,18 +163,7 @@ export function ScrollPhoneDemo({ client, whatsappUrl }: ScrollPhoneDemoProps) {
           </a>
         </div>
 
-        <div
-          className="scroll-phone-shell"
-          aria-label="Mini landing en acción"
-          ref={phoneRef}
-        >
-          <span className="scroll-phone-notch" aria-hidden="true" />
-          <div className="scroll-phone-viewport" ref={viewportRef}>
-            <div className="scroll-phone-content" ref={contentRef}>
-              <BusinessLanding client={client} previewMode />
-            </div>
-          </div>
-        </div>
+        <InteractivePhoneMockup client={client} />
       </div>
     </section>
   );

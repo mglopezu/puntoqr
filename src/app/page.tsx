@@ -4,16 +4,16 @@ import {
   HiOutlineBanknotes,
   HiOutlineChatBubbleLeftRight,
   HiOutlineCheck,
-  HiOutlineClipboardDocumentList,
   HiOutlineMapPin,
   HiOutlineQrCode,
   HiOutlineShoppingBag,
 } from "react-icons/hi2";
-import { ScrollPhoneDemo } from "@/components/puntoqr/ScrollPhoneDemo";
+import { InteractivePhoneMockup } from "@/components/puntoqr/ScrollPhoneDemo";
 import { getPuntoQrClientBySlug } from "@/lib/puntoqr";
 
 const WHATSAPP_URL =
   "https://wa.me/56966991537?text=Hola,%20quiero%20crear%20mi%20PuntoQR";
+const MARTINA_DEMO_URL = "https://www.puntoqr.cl/dulces-martina";
 
 const featureCards = [
   {
@@ -132,7 +132,7 @@ export default function HomePage() {
         <div className="marketing-hero__copy">
           <p className="marketing-eyebrow">Pack PuntoQR Inicial</p>
           <h1 id="hero-title">
-            Convierte tu mesón en un punto de contacto digital
+            Tu negocio en un punto de contacto digital
           </h1>
           <p>
             Tus clientes escanean un QR y encuentran todo en segundos:
@@ -147,45 +147,30 @@ export default function HomePage() {
               Ver demo
             </Link>
           </div>
-          <p className="marketing-microcopy">
-            Ideal para ferias, foodtrucks, tiendas, reposterías, servicios y
-            negocios locales.
-          </p>
         </div>
 
         <div className="marketing-hero__visual">
           <img
-            alt="Cliente escaneando PuntoQR en un mesón de velas artesanales"
+            alt="Cliente escaneando PuntoQR en el mesón de Dulces Martina"
             className="marketing-hero__image"
-            src="/puntoqr/hero-meson.png"
+            src="/puntoqr/heropuntoqr.png"
           />
-          <Link className="marketing-phone" href="/demo" aria-label="Ver demo PuntoQR">
-            <span className="marketing-phone__bar" aria-hidden="true" />
-            <div className="marketing-phone__screen" aria-hidden="true">
-              <div className="marketing-phone__cover">
-                <span>Providencia</span>
-              </div>
-              <div className="marketing-phone__avatar">V</div>
-              <div className="marketing-phone__content">
-                <p>Velas aromaticas artesanales</p>
-                <h3>Velas Amalia</h3>
-                <span>Velas de soya hechas a mano para regalos y espacios acogedores.</span>
-                <strong>Pedir por WhatsApp</strong>
-                <div className="marketing-phone__shortcuts">
-                  <em>Catalogo</em>
-                  <em>Instagram</em>
-                  <em>Ubicacion</em>
-                </div>
-                <div className="marketing-phone__transfer">
-                  <b>Datos de transferencia</b>
-                  <small>Amalia Rojas</small>
-                  <small>Banco Santander</small>
-                  <small>Cuenta corriente</small>
-                </div>
-              </div>
+          {demoClient ? (
+            <div className="marketing-hero__phone-stage">
+              <InteractivePhoneMockup
+                client={demoClient}
+                className="scroll-phone-shell--hero"
+              />
+              <Link className="marketing-hero__phone-link" href="/demo">
+                Ver demo completa
+              </Link>
             </div>
-          </Link>
+          ) : null}
         </div>
+        <p className="marketing-microcopy marketing-microcopy--wide">
+          Ideal para ferias, foodtrucks, tiendas, reposterías, servicios y
+          negocios locales.
+        </p>
       </section>
 
       <section className="marketing-section" id="incluye">
@@ -240,9 +225,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {demoClient ? (
-        <ScrollPhoneDemo client={demoClient} whatsappUrl={WHATSAPP_URL} />
-      ) : null}
+      <section className="qr-demo-section" aria-labelledby="qr-demo-title">
+        <div className="qr-demo-card">
+          <div className="qr-demo-copy">
+            <p className="marketing-eyebrow">QR físico</p>
+            <h2 id="qr-demo-title">Escanea y abre una mini landing real</h2>
+            <p>
+              Este QR de ejemplo lleva a Dulces Martina. Es la misma lógica que
+              tendría el QR impreso en un mesón, vitrina, afiche, tarjeta o
+              packaging.
+            </p>
+            <ul>
+              <li>El cliente escanea desde su celular.</li>
+              <li>Abre la mini landing del negocio.</li>
+              <li>Puede escribir, ver catálogo, ubicarse o copiar datos.</li>
+            </ul>
+            <Link className="marketing-button marketing-button--primary" href="/dulces-martina">
+              Ver mini landing
+              <HiOutlineArrowRight aria-hidden="true" />
+            </Link>
+          </div>
+          <a
+            className="qr-demo-visual"
+            href={MARTINA_DEMO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Abrir mini landing de Dulces Martina"
+          >
+            <span aria-hidden="true">
+              <HiOutlineQrCode />
+            </span>
+            <img
+              alt="QR para abrir la mini landing de Dulces Martina"
+              src="/puntoqr/dulces-martina-qr.png"
+            />
+            <strong>Dulces Martina</strong>
+            <small>www.puntoqr.cl/dulces-martina</small>
+          </a>
+        </div>
+      </section>
 
       <section className="steps-section">
         <div className="marketing-section__intro">
