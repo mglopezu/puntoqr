@@ -47,12 +47,12 @@ const useCases = [
   {
     title: "Ferias y bazares",
     text: "Contacto, pago, catálogo e Instagram desde tu puesto.",
-    image: "/puntoqr/feria-dulces.png",
+    image: "/puntoqr/tiendalumiere.png",
   },
   {
-    title: "Velas, artesanía y regalos",
-    text: "Un QR en tu packaging para que vuelvan a comprarte.",
-    image: "/puntoqr/pack-qr.png",
+    title: "Servicios a domicilio",
+    text: "WhatsApp, servicios, zonas de atención y datos de pago desde tu vehículo o tarjeta.",
+    image: "/puntoqr/lucas-electricidad.png",
   },
 ];
 
@@ -70,7 +70,7 @@ const faqItems = [
   {
     question: "¿El QR cambia si actualizo mis datos?",
     answer:
-      "No necesariamente. La idea es que el QR siga siendo el mismo y podamos actualizar la información de la mini landing cuando corresponda.",
+      "No. El QR puede seguir siendo el mismo. Cuando necesites cambiar tu WhatsApp, horario, catálogo, datos de pago o cualquier información, actualizamos la mini landing sin que tengas que imprimir un QR nuevo.",
   },
   {
     question: "¿Sirve para ferias o negocios sin local?",
@@ -80,7 +80,7 @@ const faqItems = [
   {
     question: "¿Incluye impresión?",
     answer:
-      "El pack inicial incluye el archivo listo para imprimir. La impresión física puede cotizarse aparte si está disponible.",
+      "No incluye impresión física. El Pack Inicial incluye un afiche listo para imprimir, el QR en formato PNG para usarlo en tarjetas, stickers, packaging o letreros, y además el enlace de tu mini landing para compartirlo en redes sociales o por WhatsApp.",
   },
   {
     question: "¿Qué necesito enviar para crear mi PuntoQR?",
