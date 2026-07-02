@@ -130,7 +130,7 @@ export default function HomePage() {
             redes sociales y datos de pago.
           </p>
           <p className="marketing-hero__price">
-            Pack PuntoQR Inicial desde $39.990
+            Precio de lanzamiento: $39.990
           </p>
           <p className="marketing-hero__benefits">
             Incluye mini landing personalizada, código QR listo para imprimir,
@@ -152,6 +152,10 @@ export default function HomePage() {
         </div>
 
         <div className="marketing-hero__visual">
+          <div className="marketing-hero__demo-copy">
+            <span>Demo interactiva</span>
+            <h2>Así se ve un PuntoQR en funcionamiento</h2>
+          </div>
           <img
             alt="Cliente escaneando PuntoQR en el mesón de Dulces Martina"
             className="marketing-hero__image"
