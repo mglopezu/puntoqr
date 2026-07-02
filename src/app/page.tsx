@@ -5,7 +5,7 @@ import {
   HiOutlineChatBubbleLeftRight,
   HiOutlineCheck,
   HiOutlineMapPin,
-  HiOutlineQrCode,
+  HiOutlinePrinter,
   HiOutlineShoppingBag,
 } from "react-icons/hi2";
 import { InteractivePhoneMockup } from "@/components/puntoqr/ScrollPhoneDemo";
@@ -13,7 +13,7 @@ import { getPuntoQrClientBySlug } from "@/lib/puntoqr";
 
 const WHATSAPP_URL =
   "https://wa.me/56966991537?text=Hola,%20quiero%20crear%20mi%20PuntoQR";
-const MARTINA_DEMO_URL = "https://www.puntoqr.cl/dulces-martina";
+const HOTEL_VIDAL_URL = "https://hotelvidal.puntoqr.cl/";
 
 const featureCards = [
   {
@@ -36,17 +36,6 @@ const featureCards = [
     text: "Haz que te sigan, te encuentren y sepan cuándo atiendes.",
     icon: <HiOutlineMapPin />,
   },
-];
-
-const packItems = [
-  "Mini landing móvil personalizada.",
-  "QR único para tu negocio.",
-  "Botones a WhatsApp, Instagram, catálogo, ubicación o pago.",
-  "Datos de transferencia ordenados y fáciles de copiar.",
-  "Uso de logo, foto, colores y datos de tu negocio.",
-  "Archivo del QR listo para imprimir.",
-  "Diseño base para afiche, tarjeta o sticker.",
-  "Ajustes iniciales para dejarlo funcionando.",
 ];
 
 const useCases = [
@@ -107,6 +96,7 @@ const faqItems = [
 
 export default function HomePage() {
   const demoClient = getPuntoQrClientBySlug("dulces-martina");
+  const hotelClient = getPuntoQrClientBySlug("hotel-vidal");
 
   return (
     <main className="marketing-page">
@@ -132,19 +122,24 @@ export default function HomePage() {
         <div className="marketing-hero__copy">
           <p className="marketing-eyebrow">Pack PuntoQR Inicial</p>
           <h1 id="hero-title">
-            Tu negocio en un punto de contacto digital
+            Tu negocio, tus datos y tus redes en un solo QR
           </h1>
           <p>
-            Tus clientes escanean un QR y encuentran todo en segundos:
-            WhatsApp, datos de pago, catálogo, redes, ubicación y horario.
+            Tus clientes escanean tu PuntoQR y encuentran en segundos tu
+            WhatsApp, catálogo, ubicación, horarios, redes sociales y datos de
+            pago.
+          </p>
+          <p className="marketing-hero__benefits">
+            Mini landing personalizada · QR listo para imprimir · Afiche
+            incluido · Hosting por 1 año
           </p>
           <div className="marketing-actions">
             <a className="marketing-button marketing-button--primary" href={WHATSAPP_URL}>
-              Pedir mi PuntoQR
+              Quiero mi PuntoQR
               <HiOutlineArrowRight aria-hidden="true" />
             </a>
             <Link className="marketing-button" href="/demo">
-              Ver demo
+              Ver demo real
             </Link>
           </div>
         </div>
@@ -168,8 +163,8 @@ export default function HomePage() {
           ) : null}
         </div>
         <p className="marketing-microcopy marketing-microcopy--wide">
-          Ideal para ferias, foodtrucks, tiendas, reposterías, servicios y
-          negocios locales.
+          Ideal para ferias, foodtrucks, tiendas, reposterías, peluquerías,
+          servicios y negocios locales.
         </p>
       </section>
 
@@ -197,71 +192,93 @@ export default function HomePage() {
 
       <section className="pack-section" id="pack">
         <div className="pack-card">
-          <div>
-            <p className="marketing-eyebrow">Oferta inicial</p>
-            <h2>Pack PuntoQR Inicial</h2>
-            <p>
-              Una solución simple para digitalizar tu negocio físico sin pagar
-              una plataforma mensual.
-            </p>
-            <p className="pack-price">Desde $39.990</p>
-            <p className="pack-note">
-              Incluye mini landing, QR personalizado y diseño base listo para
-              imprimir. El precio final puede variar según personalización y
-              piezas gráficas adicionales.
-            </p>
-            <a className="marketing-button marketing-button--primary" href={WHATSAPP_URL}>
-              Quiero mi Pack PuntoQR
-            </a>
+          <div className="pack-mockup-frame">
+            <img
+              alt="Pack PuntoQR Inicial con mini landing, código QR, afiche, sticker y tarjeta para Dulces Martina"
+              src="/puntoqr/pack-puntoqr-inicial-mockup.png"
+            />
           </div>
-          <ul className="pack-list">
-            {packItems.map((item) => (
-              <li key={item}>
-                <HiOutlineCheck aria-hidden="true" />
-                {item}
-              </li>
-            ))}
-          </ul>
+          <div className="pack-cta-zone">
+            <p className="pack-launch-price">
+              Precio de lanzamiento: <strong>$39.990</strong>
+            </p>
+            <div className="pack-actions">
+              <a className="marketing-button marketing-button--primary" href={WHATSAPP_URL}>
+                Quiero mi PuntoQR
+                <HiOutlineArrowRight aria-hidden="true" />
+              </a>
+              <Link className="marketing-button" href="/demo">
+                Ver demo
+              </Link>
+            </div>
+            <p className="pack-trust">
+              <HiOutlineCheck aria-hidden="true" />
+              Seguro, confiable y fácil de usar.
+            </p>
+          </div>
         </div>
       </section>
 
       <section className="qr-demo-section" aria-labelledby="qr-demo-title">
         <div className="qr-demo-card">
           <div className="qr-demo-copy">
-            <p className="marketing-eyebrow">QR físico</p>
-            <h2 id="qr-demo-title">Escanea y abre una mini landing real</h2>
+            <p className="marketing-eyebrow">Caso real</p>
+            <h2 id="qr-demo-title">Escanea el PuntoQR real de Hotel Vidal</h2>
             <p>
-              Este QR de ejemplo lleva a Dulces Martina. Es la misma lógica que
-              tendría el QR impreso en un mesón, vitrina, afiche, tarjeta o
-              packaging.
+              Este es un ejemplo funcionando de verdad. Hotel Vidal usa PuntoQR
+              para que sus huéspedes accedan en segundos a reservas por WhatsApp,
+              ubicación, contacto e información clave del alojamiento.
             </p>
             <ul>
-              <li>El cliente escanea desde su celular.</li>
-              <li>Abre la mini landing del negocio.</li>
-              <li>Puede escribir, ver catálogo, ubicarse o copiar datos.</li>
+              <li>El huésped escanea desde su celular.</li>
+              <li>Abre la mini landing del hotel.</li>
+              <li>Puede reservar, ver la ubicación y guardar el contacto.</li>
             </ul>
-            <Link className="marketing-button marketing-button--primary" href="/dulces-martina">
-              Ver mini landing
-              <HiOutlineArrowRight aria-hidden="true" />
-            </Link>
+            <div className="hotel-case-actions">
+              <a
+                className="marketing-button marketing-button--primary"
+                href={HOTEL_VIDAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver mini landing real
+                <HiOutlineArrowRight aria-hidden="true" />
+              </a>
+              <p>
+                <span aria-hidden="true">
+                  <HiOutlinePrinter />
+                </span>
+                También recibe su afiche y QR listos para imprimir.
+              </p>
+            </div>
           </div>
-          <a
-            className="qr-demo-visual"
-            href={MARTINA_DEMO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Abrir mini landing de Dulces Martina"
-          >
-            <span aria-hidden="true">
-              <HiOutlineQrCode />
-            </span>
+          <div className="hotel-case-visual" aria-label="Mini landing y afiche real de Hotel Vidal">
+            {hotelClient ? (
+              <InteractivePhoneMockup
+                client={hotelClient}
+                className="scroll-phone-shell--case"
+              />
+            ) : null}
             <img
-              alt="QR para abrir la mini landing de Dulces Martina"
-              src="/puntoqr/dulces-martina-qr.png"
+              alt="Afiche de recepción de Hotel Vidal con QR, WhatsApp, Booking, Facebook y ubicación"
+              className="hotel-case-poster"
+              src="/puntoqr/hotel-vidal-afiche-recepcion.png"
             />
-            <strong>Dulces Martina</strong>
-            <small>www.puntoqr.cl/dulces-martina</small>
-          </a>
+            <a
+              className="hotel-case-qr-card"
+              href={HOTEL_VIDAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir Hotel Vidal en PuntoQR"
+            >
+              <img
+                alt="QR real de Hotel Vidal"
+                src="/puntoqr/hotel-vidal-qr-real.png"
+              />
+              <strong>Hotel Vidal</strong>
+              <small>hotelvidal.puntoqr.cl</small>
+            </a>
+          </div>
         </div>
       </section>
 
