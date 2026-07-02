@@ -9,9 +9,12 @@ type TransferSectionProps = {
   client: PuntoQrClient;
 };
 
+const CLIPBOARD_WRITE_TIMEOUT_MS = 700;
+
 export function TransferSection({ client }: TransferSectionProps) {
   const defaultCopyLabel = client.copyAllLabel ?? "Copiar datos de transferencia";
-  const copyAllSuccessMessage = client.copyAllSuccessMessage ?? "Datos copiados";
+  const copyAllSuccessMessage =
+    client.copyAllSuccessMessage ?? "Datos copiados para pegar en tu banco";
   const copyFieldSuccessMessage = client.copyFieldSuccessMessage ?? "";
   const [copyLabel, setCopyLabel] = useState(defaultCopyLabel);
   const [statusMessage, setStatusMessage] = useState("");
@@ -29,13 +32,19 @@ export function TransferSection({ client }: TransferSectionProps) {
   async function copyText(text: string) {
     try {
       if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(text);
-      } else {
-        copyWithTextarea(text);
+        await Promise.race([
+          navigator.clipboard.writeText(text),
+          new Promise((_, reject) => {
+            window.setTimeout(reject, CLIPBOARD_WRITE_TIMEOUT_MS);
+          }),
+        ]);
+        return;
       }
     } catch {
-      copyWithTextarea(text);
+      // Fall through to the textarea fallback below.
     }
+
+    copyWithTextarea(text);
   }
 
   async function handleCopyAll() {

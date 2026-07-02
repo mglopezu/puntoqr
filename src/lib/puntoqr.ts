@@ -27,13 +27,12 @@ export function formatTransferText(client: PuntoQrClient): string {
   const transfer = client.datosTransferencia;
 
   return [
-    client.nombreNegocio,
     transfer.titular,
-    `RUT: ${transfer.rut}`,
+    transfer.rut,
+    transfer.correo,
     transfer.banco,
     transfer.tipoCuenta,
-    `N° ${transfer.numeroCuenta}`,
-    `Correo: ${transfer.correo}`,
+    transfer.numeroCuenta,
   ].join("\n");
 }
 

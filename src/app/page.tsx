@@ -125,13 +125,20 @@ export default function HomePage() {
             Tu negocio, tus datos y tus redes en un solo QR
           </h1>
           <p>
-            Tus clientes escanean tu PuntoQR y encuentran en segundos tu
-            WhatsApp, catálogo, ubicación, horarios, redes sociales y datos de
-            pago.
+            Creamos una mini landing personalizada para que tus clientes
+            encuentren en segundos tu WhatsApp, catálogo, ubicación, horarios,
+            redes sociales y datos de pago.
+          </p>
+          <p className="marketing-hero__price">
+            Pack PuntoQR Inicial desde $39.990
           </p>
           <p className="marketing-hero__benefits">
-            Mini landing personalizada · QR listo para imprimir · Afiche
-            incluido · Hosting por 1 año
+            Incluye mini landing personalizada, código QR listo para imprimir,
+            afiche digital y hosting por 1 año.
+          </p>
+          <p className="marketing-hero__ease">
+            No necesitas tener página web ni configurar nada. Tú nos envías tus
+            datos y nosotros te entregamos todo listo para usar.
           </p>
           <div className="marketing-actions">
             <a className="marketing-button marketing-button--primary" href={WHATSAPP_URL}>

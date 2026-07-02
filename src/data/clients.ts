@@ -34,7 +34,7 @@ export const puntoQrClients: PuntoQrClient[] = [
       "Copia los datos y envía el comprobante por WhatsApp para confirmar tu pedido.",
     copyAllLabel: "Copiar todos los datos",
     copyAllSuccessMessage:
-      "Datos copiados. Ahora envía el comprobante por WhatsApp.",
+      "Datos copiados para pegar en tu banco",
     copyFieldSuccessMessage: "Dato copiado",
     detailsTitle: "Horario y ubicación",
     mapsLabel: "Ver en Google Maps",
@@ -164,7 +164,7 @@ export const puntoQrClients: PuntoQrClient[] = [
       "Copia los datos y envía el comprobante por WhatsApp para confirmar tu reserva.",
     copyAllLabel: "Copiar todos los datos",
     copyAllSuccessMessage:
-      "Datos copiados. Ahora envía el comprobante por WhatsApp.",
+      "Datos copiados para pegar en tu banco",
     copyFieldSuccessMessage: "Dato copiado",
     detailsTitle: "Información y ubicación",
     mapsLabel: "Ver en Google Maps",
@@ -310,7 +310,7 @@ export const puntoQrClients: PuntoQrClient[] = [
       "Copia los datos y envía el comprobante por WhatsApp para confirmar tu pedido.",
     copyAllLabel: "Copiar todos los datos",
     copyAllSuccessMessage:
-      "Datos copiados. Ahora envía el comprobante por WhatsApp.",
+      "Datos copiados para pegar en tu banco",
     copyFieldSuccessMessage: "Dato copiado",
     detailsTitle: "Horario y ubicación",
     mapsLabel: "Ver en Google Maps",

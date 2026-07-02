@@ -180,11 +180,32 @@ select {
   line-height: 1.45 !important;
 }
 
+.marketing-hero__price {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border-radius: 999px;
+  background: #fff1eb;
+  color: #e65a32 !important;
+  font-size: 16px !important;
+  font-weight: 950;
+  line-height: 1.2 !important;
+  padding: 10px 14px;
+}
+
+.marketing-hero__ease {
+  max-width: 600px !important;
+  color: #64748b !important;
+  font-size: 15px !important;
+  font-weight: 750;
+  line-height: 1.5 !important;
+}
+
 .marketing-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 22px;
+  margin-top: 18px;
 }
 
 .marketing-microcopy {
@@ -1856,6 +1877,15 @@ select {
   .marketing-hero__benefits {
     display: block;
     width: 100%;
+    font-size: 13px !important;
+  }
+
+  .marketing-hero__price {
+    font-size: 14px !important;
+    padding: 9px 12px;
+  }
+
+  .marketing-hero__ease {
     font-size: 13px !important;
   }
 
