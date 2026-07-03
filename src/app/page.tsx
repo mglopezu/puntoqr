@@ -119,8 +119,10 @@ export default function HomePage() {
         </Link>
         <nav className="marketing-nav" aria-label="Navegación principal">
           <a href="#incluye">Qué incluye</a>
-          <a href="#ejemplos">Ejemplos</a>
           <a href="#pack">Pack inicial</a>
+          <a href="#caso-real">Caso real</a>
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#casos-de-uso">Casos de uso</a>
           <a href="#faq">Preguntas frecuentes</a>
         </nav>
         <a className="marketing-nav-button" href={WHATSAPP_URL}>
@@ -265,7 +267,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="qr-demo-section" aria-labelledby="qr-demo-title">
+      <section className="qr-demo-section" id="caso-real" aria-labelledby="qr-demo-title">
         <div className="qr-demo-card">
           <div className="qr-demo-copy">
             <p className="marketing-eyebrow">Caso real</p>
@@ -328,7 +330,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="steps-section">
+      <section className="steps-section" id="como-funciona">
         <div className="marketing-section__intro">
           <p className="marketing-eyebrow">Cómo funciona</p>
           <h2>Así funciona</h2>
@@ -361,9 +363,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="use-section" id="ejemplos">
+      <section className="use-section" id="casos-de-uso">
         <div className="marketing-section__intro">
-          <p className="marketing-eyebrow">Ejemplos de uso</p>
+          <p className="marketing-eyebrow">Casos de uso</p>
           <h2>Pensado para negocios que atienden en persona</h2>
         </div>
         <div className="use-grid">

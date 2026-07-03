@@ -58,10 +58,11 @@ select {
 .marketing-nav {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
   color: #64748b;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .marketing-nav a,
