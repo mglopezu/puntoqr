@@ -705,6 +705,53 @@ select {
   white-space: nowrap;
 }
 
+.pack-includes {
+  width: min(100%, 920px);
+  margin: 0 auto 18px;
+}
+
+.pack-includes p {
+  margin: 0 0 10px !important;
+  color: #071d33 !important;
+  font-size: 14px !important;
+  font-weight: 950;
+  line-height: 1.2 !important;
+  text-align: center;
+}
+
+.pack-includes ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pack-includes li {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid rgba(7, 29, 51, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #071d33;
+  font-size: 13px;
+  font-weight: 850;
+  line-height: 1.2;
+  padding: 8px 12px;
+  box-shadow: 0 10px 24px rgba(7, 29, 51, 0.05);
+}
+
+.pack-includes li svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  color: #e65a32;
+}
+
 .pack-card__copy {
   position: relative;
   z-index: 2;
@@ -2184,6 +2231,21 @@ select {
 
   .pack-launch-price strong {
     font-size: 24px;
+  }
+
+  .pack-includes {
+    margin-bottom: 16px;
+  }
+
+  .pack-includes ul {
+    justify-content: flex-start;
+  }
+
+  .pack-includes li {
+    width: 100%;
+    border-radius: 14px;
+    font-size: 12px;
+    padding: 9px 11px;
   }
 
   .pack-showcase {

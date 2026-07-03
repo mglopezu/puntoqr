@@ -83,6 +83,16 @@ const faqItems = [
       "No incluye impresión física. El Pack Inicial incluye un afiche listo para imprimir, el QR en formato PNG para usarlo en tarjetas, stickers, packaging o letreros, y además el enlace de tu mini landing para compartirlo en redes sociales o por WhatsApp.",
   },
   {
+    question: "¿Cuánto demora la entrega?",
+    answer:
+      "Una vez que recibimos la información de tu negocio, preparamos tu PuntoQR en un plazo estimado de 2 a 4 días hábiles.",
+  },
+  {
+    question: "¿Qué pasa después del primer año?",
+    answer:
+      "El primer año de hosting está incluido en el Pack PuntoQR Inicial. Después puedes renovar tu PuntoQR por una tarifa anual baja para mantener activa tu mini landing y seguir actualizando tus datos.",
+  },
+  {
     question: "¿Qué necesito enviar para crear mi PuntoQR?",
     answer:
       "Nombre del negocio, logo si tienes, WhatsApp, redes, datos de pago, ubicación, horario, fotos y enlaces que quieras incluir.",
@@ -213,6 +223,31 @@ export default function HomePage() {
             <p className="pack-launch-price">
               Precio de lanzamiento: <strong>$39.990</strong>
             </p>
+            <div className="pack-includes" aria-label="Qué incluye el Pack PuntoQR Inicial">
+              <p>Incluye:</p>
+              <ul>
+                <li>
+                  <HiOutlineCheck aria-hidden="true" />
+                  Mini landing personalizada
+                </li>
+                <li>
+                  <HiOutlineCheck aria-hidden="true" />
+                  Código QR en PNG listo para imprimir
+                </li>
+                <li>
+                  <HiOutlineCheck aria-hidden="true" />
+                  Afiche digital listo para enviar a imprenta
+                </li>
+                <li>
+                  <HiOutlineCheck aria-hidden="true" />
+                  Enlace para compartir en WhatsApp, Instagram o redes sociales
+                </li>
+                <li>
+                  <HiOutlineCheck aria-hidden="true" />
+                  Hosting incluido por 1 año
+                </li>
+              </ul>
+            </div>
             <div className="pack-actions">
               <a className="marketing-button marketing-button--primary" href={WHATSAPP_URL}>
                 Quiero mi PuntoQR
