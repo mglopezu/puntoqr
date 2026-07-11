@@ -2,6 +2,85 @@ import type { PuntoQrClient } from "@/types/puntoqr";
 
 export const puntoQrClients: PuntoQrClient[] = [
   {
+    slug: "gaby",
+    nombreNegocio: "Gabriela López",
+    rubro: "Fundadora de PuntoQR",
+    descripcion:
+      "Ayudo a emprendedores, negocios locales y profesionales independientes a convertir un código QR en un punto de contacto digital.",
+    ciudad: "Chile",
+    whatsapp: "+56966991537",
+    mensajeWhatsapp:
+      "Hola Gabriela, escaneé tu tarjeta de PuntoQR y quiero saber más.",
+    instagram: "https://www.puntoqr.cl/demo",
+    catalogoUrl: "/puntoqr/gabriela-lopez-puntoqr.vcf",
+    ubicacionTexto: "Atención online para emprendedores y negocios locales",
+    ubicacionUrl: "https://www.puntoqr.cl",
+    horario: "Disponible por WhatsApp",
+    contactEmail: "tupuntoqr@gmail.com",
+    colorPrincipal: "#E65A32",
+    logoUrl: "/puntoqr/favicon-preview.png",
+    portadaUrl: "/puntoqr/gaby-portada.png",
+    portadaAlt:
+      "Cliente escaneando un QR de PuntoQR desde su teléfono en un negocio local",
+    logoAlt: "Logo PuntoQR",
+    showPuntoQRBranding: true,
+    estiloPlantilla: "simple",
+    lineaConfianza: "Mini landing · QR listo para imprimir · Contacto digital",
+    ctaPrincipalLabel: "Hablar por WhatsApp",
+    catalogoLabel: "Guardar contacto",
+    instagramLabel: "Ver demo",
+    ubicacionLabel: "Visitar PuntoQR",
+    transferTitle: "Datos para transferir",
+    transferMicrocopy:
+      "Copia los datos si necesitas pagar o reservar tu PuntoQR.",
+    copyAllLabel: "Copiar todos los datos",
+    copyAllSuccessMessage: "Datos copiados para pegar en tu banco",
+    copyFieldSuccessMessage: "Dato copiado",
+    detailsTitle: "Contacto",
+    mapsLabel: "Visitar puntoqr.cl",
+    finalCtaText: "¿También quieres un QR así para tu negocio?",
+    finalCtaLabel: "Quiero mi PuntoQR",
+    finalCtaWhatsappMessage:
+      "Hola Gabriela, quiero crear un PuntoQR para mi negocio.",
+    quickActions: [
+      {
+        label: "Guardar contacto",
+        href: "/puntoqr/gabriela-lopez-puntoqr.vcf",
+        ariaLabel: "Guardar contacto de Gabriela López",
+        icon: "contact",
+      },
+      {
+        label: "Ver demo",
+        href: "/demo",
+        ariaLabel: "Ver demo de PuntoQR",
+        icon: "globe",
+      },
+      {
+        label: "Hotel Vidal",
+        href: "https://hotelvidal.puntoqr.cl/",
+        ariaLabel: "Ver ejemplo real de Hotel Vidal",
+        icon: "hotelVidal",
+      },
+      {
+        label: "puntoqr.cl",
+        href: "https://www.puntoqr.cl",
+        ariaLabel: "Visitar puntoqr.cl",
+        icon: "puntoqr",
+      },
+    ],
+    seoTitle: "Gabriela López | Fundadora de PuntoQR",
+    seoDescription:
+      "Tarjeta digital de Gabriela López, fundadora de PuntoQR. Guarda su contacto, habla por WhatsApp y conoce ejemplos reales de PuntoQR.",
+    datosTransferencia: {
+      titular: "Maria Gabriela Lopez Urra",
+      rut: "14.010.665-8",
+      banco: "Banco Santander",
+      tipoCuenta: "Cuenta Corriente",
+      numeroCuenta: "0 000 64 08938 2",
+      correo: "tupuntoqr@gmail.com",
+    },
+  },
+  {
     slug: "dulces-martina",
     nombreNegocio: "Dulces Martina",
     rubro: "Repostería artesanal en Talca",

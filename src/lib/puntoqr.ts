@@ -25,14 +25,15 @@ export function formatWhatsappUrlWithMessage(
 
 export function formatTransferText(client: PuntoQrClient): string {
   const transfer = client.datosTransferencia;
+  const accountNumber = transfer.numeroCuenta.replace(/\s+/g, "");
 
   return [
     transfer.titular,
     transfer.rut,
-    transfer.correo,
+    transfer.correo.toLowerCase(),
     transfer.banco,
     transfer.tipoCuenta,
-    transfer.numeroCuenta,
+    accountNumber,
   ].join("\n");
 }
 

@@ -4,11 +4,12 @@ import {
   HiOutlineBanknotes,
   HiOutlineBookOpen,
   HiOutlineBookmark,
+  HiOutlineGlobeAlt,
   HiOutlineHome,
   HiOutlineMapPin,
   HiOutlineUserPlus,
 } from "react-icons/hi2";
-import { formatWhatsappUrl } from "@/lib/puntoqr";
+import { formatWhatsappUrl, formatWhatsappUrlWithMessage } from "@/lib/puntoqr";
 import type { PuntoQrClient, QuickActionIcon } from "@/types/puntoqr";
 import { ActionButton } from "./ActionButton";
 import { BusinessFooter } from "./BusinessFooter";
@@ -111,7 +112,11 @@ export function BusinessLanding({ client, previewMode = false }: BusinessLanding
               <p>{client.finalCtaText}</p>
               <ActionButton
                 ariaLabel={`${client.finalCtaLabel} a ${client.nombreNegocio}`}
-                href={formatWhatsappUrl(client)}
+                href={
+                  client.finalCtaWhatsappMessage
+                    ? formatWhatsappUrlWithMessage(client, client.finalCtaWhatsappMessage)
+                    : formatWhatsappUrl(client)
+                }
                 icon={<FaWhatsapp />}
                 isPrimary
               >
@@ -172,6 +177,24 @@ function getQuickActionIcon(icon: QuickActionIcon, slug: string) {
       return <HiOutlineUserPlus />;
     case "instagram":
       return <FaInstagram />;
+    case "globe":
+      return <HiOutlineGlobeAlt />;
+    case "hotelVidal":
+      return (
+        <img
+          alt=""
+          className="brand-action-icon brand-action-icon--image"
+          src="/puntoqr/hotel-vidal-logo.png"
+        />
+      );
+    case "puntoqr":
+      return (
+        <img
+          alt=""
+          className="brand-action-icon brand-action-icon--image"
+          src="/puntoqr/favicon-preview.png"
+        />
+      );
     case "map":
       return <HiOutlineMapPin />;
     case "catalog":

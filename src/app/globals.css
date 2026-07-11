@@ -3318,6 +3318,24 @@ select {
   padding: 8px;
 }
 
+.business-landing--gaby .business-header__image {
+  object-position: center 54%;
+}
+
+.business-landing--gaby .business-header--has-cover::after {
+  background: linear-gradient(180deg, rgba(7, 29, 51, 0.04), rgba(7, 29, 51, 0.42));
+}
+
+.business-landing--gaby .business-profile__logo {
+  border-color: #fff;
+  background: #fff;
+}
+
+.business-landing--gaby .business-profile__logo img {
+  object-fit: contain;
+  padding: 9px;
+}
+
 .business-landing--app .business-profile__logo {
   border-color: #211f1c;
   color: #211f1c;
@@ -3412,6 +3430,39 @@ select {
 
 .business-landing--hotel-vidal .quick-action-row {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.business-landing--gaby .quick-action-row {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.business-landing--gaby .action-button--compact {
+  border-color: rgba(7, 29, 51, 0.1);
+  background: #071d33;
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(7, 29, 51, 0.12);
+}
+
+.business-landing--gaby .action-button--compact .action-button__icon {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(230, 90, 50, 0.18);
+  color: #ff7048;
+}
+
+.business-landing--gaby .action-button--compact .action-button__icon:has(.brand-action-icon--image) {
+  border-color: transparent;
+  background: transparent;
+}
+
+.business-landing--gaby .brand-action-icon--image {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.business-landing--gaby .trust-line {
+  color: #071d33;
 }
 
 .action-button {
@@ -4653,5 +4704,272 @@ select {
   .home-photo-grid img:first-child {
     height: 260px;
     grid-row: auto;
+  }
+}
+
+.gaby-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(230, 90, 50, 0.16), transparent 24rem),
+    radial-gradient(circle at 85% 12%, rgba(7, 29, 51, 0.12), transparent 24rem),
+    linear-gradient(180deg, #fbf7f2 0%, #edf3f8 100%);
+  color: #071d33;
+  padding: 32px 16px;
+}
+
+.gaby-card {
+  width: min(100%, 460px);
+  overflow: hidden;
+  border: 1px solid rgba(7, 29, 51, 0.08);
+  border-radius: 34px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 250, 247, 0.98)),
+    #fffaf7;
+  box-shadow: 0 28px 84px rgba(7, 29, 51, 0.14);
+}
+
+.gaby-hero {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 34px 28px 20px;
+  text-align: center;
+}
+
+.gaby-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 172px;
+  margin-bottom: 4px;
+}
+
+.gaby-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gaby-identity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(230, 90, 50, 0.14);
+  border-radius: 999px;
+  background: rgba(230, 90, 50, 0.08);
+  color: #e65a32;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 8px 12px;
+}
+
+.gaby-identity-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.gaby-kicker {
+  margin: 8px 0 0;
+  color: #e65a32;
+  font-size: 14px;
+  font-weight: 950;
+}
+
+.gaby-hero h1 {
+  margin: 0;
+  color: #071d33;
+  font-size: clamp(38px, 10vw, 52px);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.gaby-lead {
+  max-width: 370px;
+  margin: 0;
+  color: #475569;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.48;
+}
+
+.gaby-actions {
+  display: grid;
+  gap: 10px;
+  padding: 10px 22px 0;
+}
+
+.gaby-action {
+  display: grid;
+  min-height: 58px;
+  grid-template-columns: 42px minmax(0, 1fr) 20px;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(7, 29, 51, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.84);
+  color: #071d33;
+  font-size: 15px;
+  font-weight: 900;
+  text-decoration: none;
+  padding: 9px 14px 9px 9px;
+  box-shadow: 0 12px 30px rgba(7, 29, 51, 0.06);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.gaby-action:hover {
+  border-color: rgba(230, 90, 50, 0.28);
+  box-shadow: 0 16px 34px rgba(7, 29, 51, 0.1);
+  transform: translateY(-1px);
+}
+
+.gaby-action:focus-visible,
+.gaby-final__button:focus-visible,
+.gaby-logo:focus-visible {
+  outline: 3px solid rgba(230, 90, 50, 0.34);
+  outline-offset: 4px;
+}
+
+.gaby-action--primary {
+  border-color: transparent;
+  background: #e65a32;
+  color: #fff;
+  box-shadow: 0 18px 38px rgba(230, 90, 50, 0.24);
+}
+
+.gaby-action--whatsapp {
+  border-color: rgba(37, 211, 102, 0.24);
+}
+
+.gaby-action__icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(7, 29, 51, 0.06);
+  color: #071d33;
+  line-height: 0;
+}
+
+.gaby-action--primary .gaby-action__icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.gaby-action--whatsapp .gaby-action__icon {
+  background: rgba(37, 211, 102, 0.12);
+  color: #168a42;
+}
+
+.gaby-action svg {
+  width: 20px;
+  height: 20px;
+}
+
+.gaby-contact-note {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  margin: 18px 22px 0;
+  border: 1px solid rgba(230, 90, 50, 0.12);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top left, rgba(230, 90, 50, 0.12), transparent 12rem),
+    rgba(255, 241, 235, 0.72);
+  padding: 14px;
+}
+
+.gaby-contact-note div {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 15px;
+  background: #fff;
+  color: #e65a32;
+}
+
+.gaby-contact-note svg {
+  width: 22px;
+  height: 22px;
+}
+
+.gaby-contact-note p {
+  margin: 0;
+  color: #5f6f83;
+  font-size: 13px;
+  font-weight: 760;
+  line-height: 1.4;
+}
+
+.gaby-final {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  padding: 24px 22px 28px;
+  text-align: center;
+}
+
+.gaby-final p {
+  margin: 0;
+  color: #071d33;
+  font-size: 17px;
+  font-weight: 950;
+}
+
+.gaby-final__button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 16px;
+  background: #071d33;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 950;
+  text-decoration: none;
+  padding: 0 18px;
+  box-shadow: 0 18px 34px rgba(7, 29, 51, 0.18);
+}
+
+.gaby-final__button svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 640px) {
+  .gaby-page {
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .gaby-card {
+    width: 100%;
+    min-height: 100vh;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .gaby-hero {
+    padding: 28px 22px 18px;
+  }
+
+  .gaby-actions,
+  .gaby-contact-note,
+  .gaby-final {
+    margin-inline: 0;
+    padding-inline: 18px;
+  }
+
+  .gaby-contact-note {
+    margin: 18px 18px 0;
   }
 }

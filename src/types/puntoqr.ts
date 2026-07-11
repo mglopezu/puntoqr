@@ -33,7 +33,16 @@ export type CatalogSection = {
   specialOrdersWhatsappMessage?: string;
 };
 
-export type QuickActionIcon = "booking" | "facebook" | "map" | "contact" | "catalog" | "instagram";
+export type QuickActionIcon =
+  | "booking"
+  | "facebook"
+  | "map"
+  | "contact"
+  | "catalog"
+  | "instagram"
+  | "globe"
+  | "hotelVidal"
+  | "puntoqr";
 
 export type QuickAction = {
   label: string;
@@ -91,6 +100,7 @@ export type PuntoQrClient = {
   mapsLabel?: string;
   finalCtaText?: string;
   finalCtaLabel?: string;
+  finalCtaWhatsappMessage?: string;
   catalogSection?: CatalogSection;
   gallerySection?: GallerySection;
   quickActions?: QuickAction[];
